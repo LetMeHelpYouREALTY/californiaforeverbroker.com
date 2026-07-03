@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Homes for Sale by Neighborhood | Las Vegas & Henderson",
   description:
     "Find homes for sale in Summerlin, Henderson, Green Valley, Southern Highlands & more. Neighborhood guides for California homebuyers moving to Las Vegas.",
+  alternates: { canonical: "/neighborhoods" },
 };
 
 export default function NeighborhoodsIndexPage() {

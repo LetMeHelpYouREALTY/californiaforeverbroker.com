@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Luxury Homes Las Vegas & Henderson | The Ridges, Southern Highlands",
   description:
     "Luxury and high-end homes in Las Vegas and Henderson: The Ridges, Southern Highlands, and premium communities. Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
+  alternates: { canonical: "/luxury" },
 };
 
 const luxurySlugs = ["the-ridges", "southern-highlands", "summerlin", "henderson"];

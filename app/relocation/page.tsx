@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "California to Las Vegas Relocation Guide for Homebuyers",
   description:
     "Planning to buy a home in Las Vegas? Why California homebuyers move here: taxes, cost of living, schools & relocation checklist. Dr. Jan Duffy, Berkshire Hathaway.",
+  alternates: { canonical: "/relocation" },
 };
 
 const checklist = [

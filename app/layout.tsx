@@ -7,7 +7,10 @@ import { CalendlyBadge } from "@/components/CalendlyBadge";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site-config";
 
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
     default: "Homes for Sale Las Vegas & Henderson | California Forever Broker",
     template: "%s | California Forever Broker",
@@ -22,12 +25,28 @@ export const metadata: Metadata = {
     "first-time homebuyer Las Vegas",
     "relocation real estate Nevada",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  ...(googleVerification
+    ? { verification: { google: googleVerification } }
+    : {}),
   openGraph: {
     title: "Homes for Sale Las Vegas & Henderson | California Forever Broker",
-    description: "Search homes for sale in Las Vegas and Henderson. Your trusted partner for buying, relocating from California, and neighborhood guides.",
+    description:
+      "Search homes for sale in Las Vegas and Henderson. Your trusted partner for buying, relocating from California, and neighborhood guides.",
     url: siteConfig.siteUrl,
+    type: "website",
+    siteName: siteConfig.name,
   },
-  metadataBase: new URL(siteConfig.siteUrl),
 };
 
 export default function RootLayout({

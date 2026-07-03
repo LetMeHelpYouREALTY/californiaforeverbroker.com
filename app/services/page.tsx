@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Real Estate Services | Buy, Sell & Relocate to Las Vegas",
   description:
     "Home buying, California relocation, home selling, luxury homes, 55+ communities, new construction. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+  alternates: { canonical: "/services" },
 };
 
 const services = [

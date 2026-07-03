@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Sell Your Home | California or Nevada | Dr. Jan Duffy",
   description:
     "Selling your home in California before relocating, or selling in Las Vegas or Henderson. Full-service representation. Berkshire Hathaway HomeServices.",
+  alternates: { canonical: "/sellers" },
 };
 
 const steps = [

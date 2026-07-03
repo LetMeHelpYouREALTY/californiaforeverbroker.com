@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "New Construction & Builder Incentives | Las Vegas & Henderson",
   description:
     "New homes and builder incentives for California homebuyers: Summerlin, Henderson, North Las Vegas. Rate buydowns, quick-move-in. Schedule a call with Dr. Jan Duffy for your new construction purchase.",
+  alternates: { canonical: "/new-homes" },
   openGraph: {
     title: "New Construction Las Vegas & Henderson | Builder Incentives",
     description:

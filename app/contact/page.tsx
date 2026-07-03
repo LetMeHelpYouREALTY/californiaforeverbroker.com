@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Contact | Buy a Home in Las Vegas or Henderson",
   description:
     "Contact Dr. Jan Duffy to buy a home in Las Vegas or Henderson. California relocation, first-time homebuyer help, and neighborhood tours. Call or send a message.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Las Vegas & Henderson Market Report | Homes for Sale Stats",
   description:
     "Current Las Vegas and Henderson real estate stats: median home price, days on market, inventory. For homebuyers and California relocators. Updated regularly.",
+  alternates: { canonical: "/market-report" },
 };
 
 const stats = [

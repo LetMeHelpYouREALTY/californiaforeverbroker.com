@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "55+ & Active Adult Communities | Las Vegas & Henderson",
   description:
     "55+ and active adult communities in Las Vegas and Henderson. Amenities, lifestyle, and the right fit for your next chapter. Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
+  alternates: { canonical: "/55-plus" },
 };
 
 const benefits = [

@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Homes for Sale in ${neighborhood.name} | Las Vegas Real Estate`,
     description: `Find homes in ${neighborhood.name}. ${neighborhood.priceFrom} and up. Expert help for California homebuyers relocating to Las Vegas. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.`,
+    alternates: { canonical: `/neighborhoods/${slug}` },
   };
 }
 
