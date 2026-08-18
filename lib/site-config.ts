@@ -19,7 +19,8 @@ export const siteConfig = {
     phone: "+19497763527",
     phoneDisplay: "(949) 776-3527",
   },
-  siteUrl: "https://californiaforeverbroker.com",
+  /** Canonical host. Must match Vercel primary domain and GBP (www). */
+  siteUrl: "https://www.californiaforeverbroker.com",
   gbpReviewUrl: "https://g.page/r/heyberkshire/review",
   realscoutUrl: "http://drjanduffy.realscout.com/",
   calendlyUrl: "https://calendly.com/drjanduffy/dr-duffy-private-15-min-conversation",
