@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: canonicalUrl("/"),
-    types: {
-      "text/markdown": canonicalUrl("/llms.txt"),
-    },
   },
   robots: {
     index: true,

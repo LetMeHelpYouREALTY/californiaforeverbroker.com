@@ -42,6 +42,15 @@ const nextConfig = {
         ],
       },
       {
+        source: "/llms.txt",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex",
+          },
+        ],
+      },
+      {
         source: "/:path*",
         headers: [
           {
@@ -54,10 +63,6 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
               "frame-src 'self' https://www.google.com https://maps.google.com https://calendly.com",
             ].join("; "),
-          },
-          {
-            key: "Link",
-            value: '</llms.txt>; rel="describedby"; type="text/markdown"',
           },
           {
             key: "Strict-Transport-Security",

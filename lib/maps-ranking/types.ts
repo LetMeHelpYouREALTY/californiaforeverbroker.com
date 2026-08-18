@@ -1,6 +1,10 @@
 export type MapsRankFactor = "relevance" | "distance" | "prominence";
 
-export type MapsRankSurface = "site" | "gbp-dashboard" | "citations";
+export type MapsRankSurface =
+  | "site"
+  | "gbp-dashboard"
+  | "gsc-dashboard"
+  | "citations";
 
 export type MapsRankTechnique = {
   id: string;

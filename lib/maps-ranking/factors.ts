@@ -89,6 +89,30 @@ export const mapsRankTechniques: MapsRankTechnique[] = [
     why: "Google lists review replies as a local-ranking tip. Do not invent AggregateRating in schema.",
     implemented: false,
   },
+  {
+    id: "gsc-www-property",
+    factor: "prominence",
+    surface: "gsc-dashboard",
+    title: "Search Console URL-prefix on https://www",
+    why: "Vibe-coded SEO tip (Search Central, Apr 2026): verify Search Console and use full canonical URLs. Inspect www, not HTTP or CSS assets.",
+    implemented: false,
+  },
+  {
+    id: "gsc-platform-properties",
+    factor: "prominence",
+    surface: "gsc-dashboard",
+    title: "GSC platform properties for YouTube, Instagram, TikTok, X",
+    why: "Global as of 29 Jul 2026. Track social/video posts in Search, Discover, and News. Add only accounts that exist—do not invent profile URLs in schema.",
+    implemented: false,
+  },
+  {
+    id: "gsc-gen-ai-report",
+    factor: "prominence",
+    surface: "gsc-dashboard",
+    title: "GSC Generative AI performance report",
+    why: "AI Overviews/AI Mode use the same indexed HTML as Search. No extra markdown or llms.txt requirement (developers.google.com/search/docs/appearance/ai-features).",
+    implemented: false,
+  },
 ];
 
 export function citationNap() {

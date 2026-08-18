@@ -3,6 +3,11 @@ import { siteConfig } from "@/lib/site-config";
 
 export const dynamic = "force-static";
 
+/**
+ * Optional machine file for non-Google AI tools.
+ * Google Search ignores llms.txt and does not use markdown mirrors
+ * (Search Central, June 2026). Served with X-Robots-Tag: noindex.
+ */
 export function GET() {
   const base = siteConfig.siteUrl.replace(/\/$/, "");
   const body = `# ${siteConfig.name}
@@ -37,6 +42,7 @@ Canonical host: ${base}. Service area: Las Vegas, Henderson, Summerlin, Green Va
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
       "Cache-Control": "public, max-age=3600",
+      "X-Robots-Tag": "noindex",
     },
   });
 }
