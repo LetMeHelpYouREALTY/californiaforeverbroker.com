@@ -5,7 +5,6 @@ import { siteConfig } from "@/lib/site-config";
 export const alt = ogImageAlt;
 export const size = ogImageSize;
 export const contentType = "image/png";
-export const runtime = "edge";
 
 export default function OpenGraphImage() {
   const { name, nap, agent } = siteConfig;
