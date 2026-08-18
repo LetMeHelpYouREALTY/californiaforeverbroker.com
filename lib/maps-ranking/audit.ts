@@ -1,3 +1,4 @@
+import robots from "@/app/robots";
 import { mapsRankTechniques } from "@/lib/maps-ranking/factors";
 import type { AuditCheck, AuditStatus } from "@/lib/maps-ranking/types";
 import { canonicalUrl, redirectTarget } from "@/lib/seo";
@@ -15,7 +16,25 @@ export function runMapsRankAudit(): {
   techniques: typeof mapsRankTechniques;
 } {
   const { nap, realscoutUrl, gbpMapsUrl, gbpReviewUrl, siteUrl } = siteConfig;
+  const spec = robots();
+  const robotRules = Array.isArray(spec.rules) ? spec.rules : [spec.rules];
+  const disallows = robotRules.flatMap((rule) => {
+    if (!rule.disallow) return [];
+    return Array.isArray(rule.disallow) ? rule.disallow : [rule.disallow];
+  });
+  const blocksNextStatic = disallows.some(
+    (path) =>
+      path === "/_next/" ||
+      path === "/_next/static" ||
+      path === "/_next/static/" ||
+      path.startsWith("/_next/static"),
+  );
   const checks: AuditCheck[] = [
+    {
+      id: "robots-allows-next-static",
+      status: statusFor(!blocksNextStatic),
+      detail: "robots.txt must not Disallow /_next/static (Google needs CSS/JS)",
+    },
     {
       id: "canonical-www",
       status: statusFor(siteUrl === "https://www.californiaforeverbroker.com"),

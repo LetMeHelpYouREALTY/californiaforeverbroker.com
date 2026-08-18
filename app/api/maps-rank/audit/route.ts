@@ -5,6 +5,9 @@ export const dynamic = "force-static";
 
 export function GET() {
   return NextResponse.json(runMapsRankAudit(), {
-    headers: { "Cache-Control": "public, max-age=300" },
+    headers: {
+      "Cache-Control": "public, max-age=300",
+      "X-Robots-Tag": "noindex",
+    },
   });
 }
