@@ -15,10 +15,16 @@ export function middleware(request: NextRequest) {
     host,
     pathname: request.nextUrl.pathname,
     search: request.nextUrl.search,
+    forwardedProto: request.headers.get("x-forwarded-proto"),
   });
 
   if (target) {
-    return NextResponse.redirect(target, 308);
+    const redirected = NextResponse.redirect(target, 308);
+    redirected.headers.set(
+      "Strict-Transport-Security",
+      "max-age=63072000; includeSubDomains",
+    );
+    return redirected;
   }
 
   const response = NextResponse.next();

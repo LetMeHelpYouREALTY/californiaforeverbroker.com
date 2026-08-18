@@ -32,6 +32,10 @@ const nextConfig = {
             key: "Link",
             value: '</llms.txt>; rel="describedby"; type="text/markdown"',
           },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains",
+          },
         ],
       },
     ];

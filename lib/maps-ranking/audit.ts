@@ -30,6 +30,28 @@ export function runMapsRankAudit(): {
       detail: canonicalUrl("/relocation"),
     },
     {
+      id: "www-relocation-no-redirect",
+      status: statusFor(
+        redirectTarget({
+          protocol: "https:",
+          host: "www.californiaforeverbroker.com",
+          pathname: "/relocation",
+        }) === null,
+      ),
+      detail: "www /relocation must 200 so GSC can index it",
+    },
+    {
+      id: "http-apex-to-https-www",
+      status: statusFor(
+        redirectTarget({
+          protocol: "http:",
+          host: "californiaforeverbroker.com",
+          pathname: "/",
+        }) === "https://www.californiaforeverbroker.com",
+      ),
+      detail: "http://apex/ must 308 to https://www (GSC Page with redirect is expected)",
+    },
+    {
       id: "no-www-self-redirect",
       status: statusFor(
         redirectTarget({

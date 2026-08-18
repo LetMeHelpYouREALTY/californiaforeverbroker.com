@@ -58,11 +58,13 @@ export function redirectTarget({
   host,
   pathname,
   search = "",
+  forwardedProto,
 }: {
   protocol: string;
   host: string;
   pathname: string;
   search?: string;
+  forwardedProto?: string | null;
 }): string | null {
   const hostname = host.split(":")[0]?.toLowerCase() ?? "";
   if (!hostname) return null;
@@ -75,11 +77,15 @@ export function redirectTarget({
       ? canonicalHost
       : hostname;
 
+  const incomingProto = (forwardedProto || protocol)
+    .replace(/:$/, "")
+    .toLowerCase();
   const hostChanged = !local && hostname === apexHost;
   const pathChanged = stripped !== pathname;
-  if (!hostChanged && !pathChanged) return null;
+  const needsHttps = !local && incomingProto === "http";
+  if (!hostChanged && !pathChanged && !needsHttps) return null;
 
-  const scheme = local ? protocol.replace(/:$/, "") || "https" : "https";
+  const scheme = local ? incomingProto || "https" : "https";
   const pathPart = stripped === "/" ? "" : stripped;
   return `${scheme}://${targetHost}${pathPart}${search}`;
 }
