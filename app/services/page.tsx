@@ -7,7 +7,7 @@ import { CalendlyLink } from "@/components/CalendlyLink";
 export const metadata: Metadata = pageSeo("/services", {
   title: "Real Estate Services | Buy, Sell & Relocate to Las Vegas",
   description:
-    "Home buying, California relocation, home selling, luxury homes, 55+ communities, new construction. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+    "Buy, sell, relocate, new construction, 55+, VA, and probate. Las Vegas native selling since 1987. Dr. Jan Duffy, license S.0197614.LLC. Call (949) 776-3527.",
 });
 
 const services = [
