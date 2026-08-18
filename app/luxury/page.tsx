@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
 import { neighborhoods } from "@/lib/neighborhoods";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/luxury", {
   title: "Luxury Homes Las Vegas & Henderson | The Ridges, Southern Highlands",
   description:
     "Luxury and high-end homes in Las Vegas and Henderson: The Ridges, Southern Highlands, and premium communities. Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
-  alternates: { canonical: "/luxury" },
-};
+});
 
 const luxurySlugs = ["the-ridges", "southern-highlands", "summerlin", "henderson"];
 const luxuryNeighborhoods = neighborhoods.filter((n) => luxurySlugs.includes(n.slug));

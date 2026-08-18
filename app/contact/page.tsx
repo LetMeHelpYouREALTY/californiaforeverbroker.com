@@ -4,17 +4,17 @@ import { CalendlyInline } from "@/components/CalendlyInline";
 import { JsonLd } from "@/components/JsonLd";
 import { GbpActions } from "@/components/sections/GbpActions";
 import { webPageNode } from "@/lib/schema";
+import { pageSeo } from "@/lib/seo";
 import {
   mapEmbedSrc,
   siteConfig,
 } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/contact", {
   title: "Contact | Buy a Home in Las Vegas or Henderson",
   description:
     "Contact Dr. Jan Duffy at 18600 MacArthur Blvd., Suite 150, Irvine, CA 92612. Call (949) 776-3527. Monday–Friday 8:30 a.m.–5:00 p.m. PT.",
-  alternates: { canonical: "/contact" },
-};
+});
 
 export default function ContactPage() {
   const { nap, agent, hoursDisplay, hoursNote } = siteConfig;

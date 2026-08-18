@@ -1,5 +1,6 @@
 import { mapsRankTechniques } from "@/lib/maps-ranking/factors";
 import type { AuditCheck, AuditStatus } from "@/lib/maps-ranking/types";
+import { canonicalUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 function statusFor(ok: boolean, warn = false): AuditStatus {
@@ -19,6 +20,14 @@ export function runMapsRankAudit(): {
       id: "canonical-www",
       status: statusFor(siteUrl === "https://www.californiaforeverbroker.com"),
       detail: `siteUrl=${siteUrl}`,
+    },
+    {
+      id: "canonical-relocation",
+      status: statusFor(
+        canonicalUrl("/relocation") ===
+          "https://www.californiaforeverbroker.com/relocation",
+      ),
+      detail: canonicalUrl("/relocation"),
     },
     {
       id: "nap-irvine",

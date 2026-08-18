@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/55-plus", {
   title: "55+ & Active Adult Communities | Las Vegas & Henderson",
   description:
     "55+ and active adult communities in Las Vegas and Henderson. Amenities, lifestyle, and the right fit for your next chapter. Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
-  alternates: { canonical: "/55-plus" },
-};
+});
 
 const benefits = [
   "Age-qualified or age-targeted communities with tailored amenities",

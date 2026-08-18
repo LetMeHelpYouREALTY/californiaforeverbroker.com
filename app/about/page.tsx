@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/about", {
   title: "About Dr. Jan Duffy",
   description:
     "Meet Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Serving Las Vegas and Henderson since 2008. License S.0197614.LLC. Your trusted partner for California-to-Las-Vegas relocation.",
-  alternates: { canonical: "/about" },
-};
+});
 
 const highlights = [
   { label: "Nevada license", value: "S.0197614.LLC" },

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/market-report", {
   title: "Las Vegas & Henderson Market Report | Homes for Sale Stats",
   description:
     "Current Las Vegas and Henderson real estate stats: median home price, days on market, inventory. For homebuyers and California relocators. Updated regularly.",
-  alternates: { canonical: "/market-report" },
-};
+});
 
 const stats = [
   { label: "Median Home Price", value: "$450K", sub: "+4.2% YoY" },

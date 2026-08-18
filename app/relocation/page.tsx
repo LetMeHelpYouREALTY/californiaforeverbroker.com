@@ -4,14 +4,14 @@ import { CalendlyLink } from "@/components/CalendlyLink";
 import { JsonLd } from "@/components/JsonLd";
 import { FaqBlock } from "@/components/sections/FaqBlock";
 import { faqPageNode, webPageNode } from "@/lib/schema";
+import { pageSeo } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/relocation", {
   title: "California to Las Vegas Relocation Guide for Homebuyers",
   description:
     "Planning to buy a home in Las Vegas? Why California homebuyers move here: taxes, cost of living, schools & relocation checklist. Dr. Jan Duffy, Berkshire Hathaway.",
-  alternates: { canonical: "/relocation" },
-};
+});
 
 const checklist = [
   "Get pre-approved for a mortgage (we can refer trusted lenders)",

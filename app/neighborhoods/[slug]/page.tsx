@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import type { FaqItem } from "@/lib/faqs";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { breadcrumbNode, faqPageNode, webPageNode } from "@/lib/schema";
+import { pageSeo } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -20,11 +21,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const neighborhood = neighborhoods.find((n) => n.slug === slug);
   if (!neighborhood) return { title: "Neighborhood" };
-  return {
+  return pageSeo(`/neighborhoods/${slug}`, {
     title: `Homes for Sale in ${neighborhood.name} | Las Vegas Real Estate`,
     description: `Find homes in ${neighborhood.name}. ${neighborhood.priceFrom} and up. Expert help for California homebuyers relocating to Las Vegas. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.`,
-    alternates: { canonical: `/neighborhoods/${slug}` },
-  };
+  });
 }
 
 function neighborhoodFaqs(

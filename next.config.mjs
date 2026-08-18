@@ -1,5 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  trailingSlash: false,
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "californiaforeverbroker.com" }],
+        destination: "https://www.californiaforeverbroker.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/new-homes", {
   title: "New Construction & Builder Incentives | Las Vegas & Henderson",
   description:
     "New homes and builder incentives for California homebuyers: Summerlin, Henderson, North Las Vegas. Rate buydowns, quick-move-in. Schedule a call with Dr. Jan Duffy for your new construction purchase.",
-  alternates: { canonical: "/new-homes" },
   openGraph: {
     title: "New Construction Las Vegas & Henderson | Builder Incentives",
     description:
       "Current builder incentives and new construction communities. Dr. Jan Duffy helps California relocators navigate new homes in Summerlin, Henderson, and the Las Vegas valley.",
   },
-};
+});
 
 const builderFaqs = [
   {

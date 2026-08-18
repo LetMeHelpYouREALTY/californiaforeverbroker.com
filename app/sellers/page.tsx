@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/sellers", {
   title: "Sell Your Home | California or Nevada | Dr. Jan Duffy",
   description:
     "Selling your home in California before relocating, or selling in Las Vegas or Henderson. Full-service representation. Berkshire Hathaway HomeServices.",
-  alternates: { canonical: "/sellers" },
-};
+});
 
 const steps = [
   "Consultation and market analysis for your area",

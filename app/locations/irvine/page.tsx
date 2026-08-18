@@ -5,23 +5,23 @@ import { GbpActions } from "@/components/sections/GbpActions";
 import { FaqBlock } from "@/components/sections/FaqBlock";
 import { faqPageNode, webPageNode } from "@/lib/schema";
 import { irvineOfficeFaqs } from "@/lib/faqs";
+import { pageSeo } from "@/lib/seo";
 import {
   mapEmbedSrc,
   siteConfig,
 } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/locations/irvine", {
   title: "Irvine Real Estate Office | Maps Listing for CA Relocators",
   description:
     "Visit Dr. Jan Duffy at 18600 MacArthur Blvd., Suite 150, Irvine, CA 92612. Call (949) 776-3527. Monday–Friday 8:30 a.m.–5:00 p.m. PT. Google Maps pin, hours, and Las Vegas buyer representation.",
-  alternates: { canonical: "/locations/irvine" },
   other: {
     "geo.region": "US-CA",
     "geo.placename": "Irvine",
     "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
     ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
   },
-};
+});
 
 export default function IrvineOfficePage() {
   const { nap, agent, hoursDisplay, hoursNote } = siteConfig;

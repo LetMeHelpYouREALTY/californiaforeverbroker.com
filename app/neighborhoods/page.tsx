@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { neighborhoods } from "@/lib/neighborhoods";
+import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/neighborhoods", {
   title: "Homes for Sale by Neighborhood | Las Vegas & Henderson",
   description:
     "Find homes for sale in Summerlin, Henderson, Green Valley, Southern Highlands & more. Neighborhood guides for California homebuyers moving to Las Vegas.",
-  alternates: { canonical: "/neighborhoods" },
-};
+});
 
 export default function NeighborhoodsIndexPage() {
   return (

@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CalendlyBadge } from "@/components/CalendlyBadge";
 import { JsonLd } from "@/components/JsonLd";
 import { siteEntityGraph } from "@/lib/schema";
+import { canonicalUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 const googleVerification =
@@ -35,9 +36,9 @@ export const metadata: Metadata = {
     "relocation real estate Nevada",
   ],
   alternates: {
-    canonical: "/",
+    canonical: canonicalUrl("/"),
     types: {
-      "text/markdown": "/llms.txt",
+      "text/markdown": canonicalUrl("/llms.txt"),
     },
   },
   robots: {
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Homes for Sale Las Vegas & Henderson | California Forever Broker",
     description: siteConfig.description,
-    url: siteConfig.siteUrl,
+    url: canonicalUrl("/"),
     type: "website",
     locale: "en_US",
     siteName: siteConfig.name,

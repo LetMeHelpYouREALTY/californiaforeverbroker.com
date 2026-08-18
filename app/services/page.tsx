@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo("/services", {
   title: "Real Estate Services | Buy, Sell & Relocate to Las Vegas",
   description:
     "Home buying, California relocation, home selling, luxury homes, 55+ communities, new construction. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
-  alternates: { canonical: "/services" },
-};
+});
 
 const services = [
   { title: "Home Buying", href: "/", description: "First-time or repeat buyer—we guide you from search to closing with local market insight and negotiation." },
