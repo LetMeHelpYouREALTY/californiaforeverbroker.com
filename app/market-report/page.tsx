@@ -24,7 +24,9 @@ export default function MarketReportPage() {
         Las Vegas Real Estate Market Report
       </h1>
       <p className="text-slate-600 mb-8">
-        Current market data for Las Vegas and Henderson. Update this page periodically with your preferred source (e.g., local MLS or brokerage reports).
+        Snapshot figures below are not live MLS pulls. Verify median price, days
+        on market, and inventory with Dr. Duffy before you write an offer. Last
+        page review: August 2026.
       </p>
 
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">

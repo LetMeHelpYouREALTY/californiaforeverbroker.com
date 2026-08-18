@@ -1,22 +1,26 @@
 import Link from "next/link";
-import { siteConfig } from "@/lib/site-config";
-import { neighborhoods } from "@/lib/neighborhoods";
 import { CalendlyLink } from "@/components/CalendlyLink";
+import { JsonLd } from "@/components/JsonLd";
+import { CtaBand } from "@/components/sections/CtaBand";
+import { FaqBlock } from "@/components/sections/FaqBlock";
+import { Button } from "@/components/ui/button";
+import { homeFaqs } from "@/lib/faqs";
+import { neighborhoods } from "@/lib/neighborhoods";
+import { faqPageNode, webPageNode } from "@/lib/schema";
+import { siteConfig } from "@/lib/site-config";
 
 const whyRelocate = [
-  "No state income tax — keep more of what you earn",
-  "Lower cost of living and housing than most California markets",
-  "Strong job growth and diverse economy",
-  "Sun, recreation, and family-friendly communities",
+  "Nevada has no state income tax — keep more of what you earn",
+  "Lower typical purchase prices than most coastal California markets",
+  "Job growth across hospitality, logistics, healthcare, and tech",
+  "365-day outdoor access: trails, golf, Red Rock, and Lake Las Vegas",
 ];
 
 const whyChooseUs = [
-  { title: "Trusted Expertise", desc: "Serving Las Vegas and Henderson since 2008 with proven results." },
-  { title: "Market Knowledge", desc: "Deep understanding of local market trends and neighborhood insights." },
-  { title: "Personalized Service", desc: "Dedicated attention to every client with customized solutions." },
-  { title: "Proven Results", desc: "500+ successful transactions and satisfied clients." },
-  { title: "Responsive", desc: "Quick response times and seamless communication throughout." },
-  { title: "Full Service", desc: "Complete support from search to closing and beyond." },
+  { title: "Licensed since 2008", desc: "Nevada license S.0197614.LLC. Serving Las Vegas and Henderson buyers and sellers." },
+  { title: "Relocation process", desc: "One agent from first search through closing for California-to-Nevada moves." },
+  { title: "New-construction compare", desc: "Rate buydowns and closing credits compared across Summerlin, Henderson, and North Las Vegas." },
+  { title: "BHHS network", desc: "Berkshire Hathaway HomeServices Nevada Properties listing and referral support." },
 ];
 
 const testimonials = [
@@ -25,343 +29,150 @@ const testimonials = [
   { name: "Emily Rodriguez", location: "Summerlin, NV", text: "As first-time homebuyers moving from CA, we were nervous. Dr. Duffy patiently explained everything and helped us find the perfect home in our budget. Thank you!" },
 ];
 
-const faqs = [
-  { q: "What areas do you serve?", a: "We specialize in Las Vegas and Henderson, Nevada, including Summerlin, Green Valley, and surrounding communities. Our expertise covers residential, luxury, and investment properties throughout Southern Nevada—especially for California relocators." },
-  { q: "How long does the home buying process take?", a: "Typically 30–45 days from accepted offer to closing. For relocating buyers, we can coordinate showings and virtual tours to fit your timeline." },
-  { q: "Do you help with home valuations?", a: "Yes. We provide complimentary home valuations and can connect you with tools to compare your California equity to Las Vegas options." },
-  { q: "What makes you different for California relocators?", a: "We focus on the full relocation journey: taxes, cost of living, schools, and neighborhoods. You get one trusted partner from first search through closing and beyond." },
-  { q: "Why choose a dedicated relocation expert instead of a generic search?", a: "Relocation is a durable decision—neighborhoods, taxes, and timing matter for years. We lead with accountability: a licensed agent, clear process, and one point of contact so you have a safe, accountable choice for your move to Las Vegas." },
-  { q: "Can you help with investment properties?", a: "Yes. We work with investors on single-family and multi-unit acquisitions in the Las Vegas valley." },
-  { q: "What are your fees?", a: "Buyer representation is typically paid by the seller. We'll outline all costs clearly at the start so there are no surprises." },
-];
-
 export default function Home() {
-  const { nap, realscoutUrl, gbpReviewUrl } = siteConfig;
+  const { realscoutUrl } = siteConfig;
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-slate-900 text-white py-16 px-4">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Find Your Dream Home in Las Vegas & Henderson
-          </h1>
-          <p className="text-xl text-slate-300 mb-6">
-            Expert real estate for California homebuyers moving to Nevada. Search homes for sale, explore neighborhoods, and get trusted help from offer to closing.
+      <JsonLd
+        nodes={[
+          webPageNode({
+            path: "/",
+            name: "Homes for Sale Las Vegas & Henderson | California Forever Broker",
+            description: siteConfig.description,
+            speakable: true,
+          }),
+          faqPageNode(homeFaqs),
+        ]}
+      />
+
+      <section className="bg-slate-950 px-4 py-16 text-white md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-sm font-medium uppercase tracking-wide text-sky-300">
+            California Forever Broker · Las Vegas & Henderson
           </p>
-          <div className="flex flex-wrap gap-4 justify-center mb-6">
-            <a
-              href={realscoutUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-slate-900 px-6 py-3 rounded font-semibold hover:bg-slate-100"
-            >
-              Search Homes for Sale
-            </a>
-            <CalendlyLink className="inline-block border border-white text-white px-6 py-3 rounded font-semibold hover:bg-white/10">
-              Talk to an Agent
+          <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+            Buy a Las Vegas or Henderson home after a California move
+          </h1>
+          <p id="aeo-answer" className="mt-5 max-w-2xl text-lg text-slate-300">
+            Dr. Jan Duffy, REALTOR®, license S.0197614.LLC, represents California
+            homebuyers in Las Vegas and Henderson. Search live listings, compare
+            10 neighborhoods, then book a 15-minute plan call at (949) 776-3527.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button asChild variant="secondary">
+              <a href={realscoutUrl} target="_blank" rel="noopener noreferrer">
+                Search homes for sale
+              </a>
+            </Button>
+            <CalendlyLink className="inline-flex items-center justify-center rounded-md border border-white px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10">
+              Talk to Dr. Duffy
             </CalendlyLink>
           </div>
-          <p className="text-sm text-slate-400">
-            First-time homebuyer? Start with our <Link href="/relocation" className="text-white underline hover:no-underline">relocation guide</Link> and <Link href="/neighborhoods" className="text-white underline hover:no-underline">neighborhoods</Link>.
+          <p className="mt-6 text-sm text-slate-400">
+            Start with the{" "}
+            <Link href="/relocation" className="text-white underline hover:no-underline">
+              relocation guide
+            </Link>{" "}
+            or{" "}
+            <Link href="/neighborhoods" className="text-white underline hover:no-underline">
+              luxury homes in Summerlin
+            </Link>
+            .
           </p>
-          <div className="flex flex-wrap gap-4 justify-center text-sm mt-4">
-            <span className="bg-slate-800 px-4 py-2 rounded">500+ Properties Sold</span>
-            <span className="bg-slate-800 px-4 py-2 rounded">Since 2008</span>
-            <span className="bg-slate-800 px-4 py-2 rounded">4.9★ Average Rating</span>
-          </div>
         </div>
       </section>
 
-      {/* Why relocate */}
-      <section className="py-12 px-4 border-b">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
-            Why California Homebuyers Choose Las Vegas
+      <section className="border-b border-slate-200 px-4 py-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            Why California homebuyers look at Las Vegas
           </h2>
-          <ul className="grid md:grid-cols-2 gap-3 list-disc list-inside text-slate-700">
+          <ul className="mt-6 grid gap-3 md:grid-cols-2">
             {whyRelocate.map((item) => (
-              <li key={item}>{item}</li>
+              <li
+                key={item}
+                className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700"
+              >
+                {item}
+              </li>
             ))}
           </ul>
-          <p className="mt-6 text-slate-600">
-            When you work with a Berkshire Hathaway HomeServices agent, you're backed by a name synonymous with trust, ethical standards, and financial strength.
-          </p>
         </div>
       </section>
 
-      {/* Kit: Durable resource + accountability (real estate / relocation) */}
-      <section className="py-12 px-4 bg-slate-50 border-b">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Your Relocation Resource — Built to Last
+      <section className="border-b border-slate-200 bg-slate-50 px-4 py-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            Neighborhoods with homes for sale
           </h2>
-          <p className="text-slate-700 mb-4">
-            We don't rely on a single page or a one-off campaign. Your California-to-Las-Vegas move is supported by a clear, durable set of resources: our <Link href="/relocation" className="text-blue-600 hover:underline">relocation guide</Link> (why move, taxes, cost of living, schools, checklist), <Link href="/neighborhoods" className="text-blue-600 hover:underline">neighborhood guides</Link> (Summerlin, Henderson, Green Valley, and more), and <Link href="/market-report" className="text-blue-600 hover:underline">market report</Link>. These are kept current so you get lasting value—and one accountable partner, licensed and backed by Berkshire Hathaway HomeServices, from first search through closing.
+          <p className="mt-2 max-w-2xl text-slate-600">
+            Compare list-price floors, commute corridors, and amenities. Figures
+            are listing starting points, not appraisals.
           </p>
-        </div>
-      </section>
-
-      {/* Market snapshot */}
-      <section className="py-12 px-4 bg-slate-50">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
-            Las Vegas Real Estate Market
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-white p-4 rounded shadow-sm text-center">
-              <p className="text-2xl font-bold text-slate-900">$450K</p>
-              <p className="text-sm text-slate-600">Median Home Price</p>
-            </div>
-            <div className="bg-white p-4 rounded shadow-sm text-center">
-              <p className="text-2xl font-bold text-slate-900">28</p>
-              <p className="text-sm text-slate-600">Avg Days on Market</p>
-            </div>
-            <div className="bg-white p-4 rounded shadow-sm text-center">
-              <p className="text-2xl font-bold text-slate-900">4,850</p>
-              <p className="text-sm text-slate-600">Active Listings</p>
-            </div>
-            <div className="bg-white p-4 rounded shadow-sm text-center">
-              <p className="text-2xl font-bold text-slate-900">2.1</p>
-              <p className="text-sm text-slate-600">Months Inventory</p>
-            </div>
-          </div>
-          <Link
-            href="/market-report"
-            className="inline-block mt-6 text-blue-600 hover:underline font-medium"
-          >
-            View full market report →
-          </Link>
-        </div>
-      </section>
-
-      {/* New construction — GEO/AEO + appointment funnel */}
-      <section className="py-12 px-4 bg-slate-50 border-b">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            New Construction & Builder Incentives in Las Vegas & Henderson
-          </h2>
-          <p className="text-slate-600 mb-4">
-            Considering a new build? California homebuyers can tap into builder incentives—rate buydowns, closing cost credits—in Summerlin, Henderson, North Las Vegas, and Lake Las Vegas. Dr. Jan Duffy helps you compare communities and current promos so you buy with confidence.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/new-homes"
-              className="inline-block bg-slate-900 text-white px-6 py-3 rounded font-medium hover:bg-slate-800"
-            >
-              New homes & builder incentives
-            </Link>
-            <CalendlyLink className="inline-block border border-slate-900 text-slate-900 px-6 py-3 rounded font-medium hover:bg-slate-100">
-              Schedule an appointment with Dr. Jan Duffy
-            </CalendlyLink>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured properties / RealScout */}
-      <section className="py-12 px-4 border-b">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Homes for Sale in Las Vegas & Henderson
-          </h2>
-          <p className="text-slate-600 mb-6">
-            Browse current listings—single-family homes, condos, and luxury properties. Updated daily for buyers and California relocators.
-          </p>
-          <a
-            href={realscoutUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-slate-900 text-white px-6 py-3 rounded font-medium hover:bg-slate-800"
-          >
-            Search all homes for sale
-          </a>
-        </div>
-      </section>
-
-      {/* Neighborhoods */}
-      <section className="py-12 px-4 bg-slate-50">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
-            Find Homes for Sale by Neighborhood
-          </h2>
-          <p className="text-slate-600 mb-6">
-            Explore where to buy: Summerlin, Henderson, Green Valley, and more. Each area has its own lifestyle and price range.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
             {neighborhoods.map((n) => (
               <Link
                 key={n.slug}
                 href={`/neighborhoods/${n.slug}`}
-                className="block bg-white p-4 rounded shadow-sm hover:shadow-md border border-slate-100"
+                className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-sky-700 hover:shadow-md"
               >
                 <span className="font-semibold text-slate-900">{n.name}</span>
-                <span className="block text-sm text-slate-600">Homes from {n.priceFrom}</span>
+                <span className="mt-1 block text-sm text-slate-600">
+                  Listings from {n.priceFrom}
+                </span>
               </Link>
             ))}
           </div>
-          <Link
-            href="/neighborhoods"
-            className="inline-block mt-6 text-blue-600 hover:underline font-medium"
-          >
-            View all neighborhoods & homes for sale →
-          </Link>
         </div>
       </section>
 
-      {/* Why choose us */}
-      <section className="py-12 px-4 border-b">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
-            Why Choose Us
+      <section className="border-b border-slate-200 px-4 py-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            How Dr. Duffy works a relocation file
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
             {whyChooseUs.map(({ title, desc }) => (
-              <div key={title}>
+              <div key={title} className="rounded-xl border border-slate-200 p-5">
                 <h3 className="font-semibold text-slate-900">{title}</h3>
-                <p className="text-slate-600 text-sm mt-1">{desc}</p>
+                <p className="mt-1 text-sm text-slate-600">{desc}</p>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-slate-600">
-            <Link href="/about" className="text-blue-600 hover:underline">Meet Dr. Jan Duffy</Link>
-            {" · "}
-            <Link href="/services" className="text-blue-600 hover:underline">View all services</Link>
-          </p>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-12 px-4 bg-slate-50">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
-            What Our Clients Say
+      <section className="border-b border-slate-200 bg-slate-50 px-4 py-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            Client notes
           </h2>
-          <p className="text-slate-600 mb-6">4.9 (500+ reviews)</p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <p className="mt-2 text-sm text-slate-500">
+            Quotes below are client comments, not a Google star rating in schema.
+            Read current reviews on Google.
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             {testimonials.map(({ name, location, text }) => (
-              <blockquote key={name} className="bg-white p-4 rounded shadow-sm border border-slate-100">
-                <p className="text-slate-700 text-sm">{text}</p>
-                <cite className="not-italic font-semibold text-slate-900 block mt-3">{name}</cite>
-                <span className="text-slate-500 text-sm">{location}</span>
+              <blockquote
+                key={name}
+                className="rounded-xl border border-slate-200 bg-white p-5"
+              >
+                <p className="text-sm text-slate-700">{text}</p>
+                <cite className="mt-3 block not-italic font-semibold text-slate-900">
+                  {name}
+                </cite>
+                <span className="text-sm text-slate-500">{location}</span>
               </blockquote>
             ))}
           </div>
-          <a
-            href={gbpReviewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-6 text-blue-600 hover:underline font-medium"
-          >
-            Read more reviews on Google
-          </a>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-12 px-4 border-b">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
-            Frequently Asked Questions
-          </h2>
-          <dl className="space-y-4">
-            {faqs.map(({ q, a }) => (
-              <div key={q}>
-                <dt className="font-semibold text-slate-900">{q}</dt>
-                <dd className="text-slate-600 text-sm mt-1 pl-0">{a}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* Homebuyer resources */}
-      <section className="py-10 px-4 border-b bg-white">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-xl font-bold text-slate-900 mb-4">
-            Homebuyer Resources
-          </h2>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href={realscoutUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline font-medium"
-            >
-              Search homes for sale
-            </a>
-            <Link href="/neighborhoods" className="text-blue-600 hover:underline font-medium">
-              Neighborhoods (Summerlin, Henderson, more)
-            </Link>
-            <Link href="/new-homes" className="text-blue-600 hover:underline font-medium">
-              New construction & builder incentives
-            </Link>
-            <Link href="/services" className="text-blue-600 hover:underline font-medium">
-              Services (buy, sell, luxury, 55+)
-            </Link>
-            <Link href="/about" className="text-blue-600 hover:underline font-medium">
-              About Dr. Jan Duffy
-            </Link>
-            <Link href="/sellers" className="text-blue-600 hover:underline font-medium">
-              Sell your home
-            </Link>
-            <Link href="/relocation" className="text-blue-600 hover:underline font-medium">
-              California to Las Vegas relocation guide
-            </Link>
-            <Link href="/market-report" className="text-blue-600 hover:underline font-medium">
-              Market report & stats
-            </Link>
-            <CalendlyLink className="text-blue-600 hover:underline font-medium">
-              Schedule an appointment with Dr. Jan Duffy
-            </CalendlyLink>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-12 px-4 bg-slate-900 text-white">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-2xl font-bold mb-4">
-            Ready to Buy a Home in Las Vegas or Henderson?
-          </h2>
-          <p className="text-slate-300 mb-6">
-            Search listings, get a market report, or talk to an agent. We help California homebuyers and first-time buyers every step of the way.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href={realscoutUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-slate-900 px-6 py-3 rounded font-medium hover:bg-slate-100"
-            >
-              Search homes for sale
-            </a>
-            <a
-              href={`tel:${nap.phone}`}
-              className="inline-block border border-white text-white px-6 py-3 rounded font-medium hover:bg-white/10"
-            >
-              Call {nap.phoneDisplay}
-            </a>
-            <CalendlyLink className="inline-block border border-white text-white px-6 py-3 rounded font-medium hover:bg-white/10">
-              Schedule a call
-            </CalendlyLink>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ schema for home */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqs.map(({ q, a }) => ({
-              "@type": "Question",
-              name: q,
-              acceptedAnswer: { "@type": "Answer", text: a },
-            })),
-          }),
-        }}
+      <FaqBlock faqs={homeFaqs} />
+      <CtaBand
+        title="Ready to buy in Las Vegas or Henderson?"
+        body="Search listings, get a neighborhood short list, or talk through your California sale-to-purchase timeline."
       />
     </>
   );

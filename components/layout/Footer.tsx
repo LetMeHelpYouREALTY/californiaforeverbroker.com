@@ -1,80 +1,63 @@
 import Link from "next/link";
-import { siteConfig } from "@/lib/site-config";
 import { CalendlyLink } from "@/components/CalendlyLink";
+import { LocalPresence } from "@/components/sections/LocalPresence";
+import { siteConfig } from "@/lib/site-config";
+
+const footerNav = [
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/new-homes", label: "New Homes" },
+  { href: "/sellers", label: "Sell Your Home" },
+  { href: "/neighborhoods", label: "Neighborhoods" },
+  { href: "/luxury", label: "Luxury Homes" },
+  { href: "/55-plus", label: "55+ Communities" },
+  { href: "/relocation", label: "Relocation Guide" },
+  { href: "/market-report", label: "Market Report" },
+  { href: "/contact", label: "Contact" },
+];
 
 export function Footer() {
-  const { nap, agent, siteUrl, gbpReviewUrl, realscoutUrl } = siteConfig;
+  const { agent, siteUrl, realscoutUrl } = siteConfig;
+  const monthYear = new Date().toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+
   return (
-    <footer className="border-t border-slate-200 bg-slate-50 mt-auto">
-      <div className="mx-auto max-w-6xl px-4 py-8">
-        <div className="flex flex-col md:flex-row gap-6 justify-between items-start">
+    <footer className="mt-auto">
+      <LocalPresence />
+      <div className="border-t border-slate-200 bg-slate-950 px-4 py-10 text-slate-300">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:justify-between">
           <div>
-            <p className="font-semibold text-slate-900">{nap.name}</p>
-            <p className="text-sm text-slate-600">
+            <p className="font-semibold text-white">{agent.name}</p>
+            <p className="mt-1 text-sm">
               License {agent.license} | {agent.brokerage}
             </p>
-            <p className="text-sm text-slate-600 mt-1">{nap.streetAddress}</p>
-            <a
-              href={`tel:${nap.phone}`}
-              className="text-sm text-blue-600 hover:underline mt-1 block"
-            >
-              {nap.phoneDisplay}
-            </a>
-          </div>
-          <div className="flex flex-wrap gap-4 md:gap-6">
-            <CalendlyLink className="text-slate-600 hover:text-slate-900">
-              Schedule a call
+            <CalendlyLink className="mt-3 inline-block text-sm font-medium text-sky-300 hover:text-white">
+              Book a 15-minute call
             </CalendlyLink>
+          </div>
+          <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm" aria-label="Footer">
             <a
               href={realscoutUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-900"
+              className="hover:text-white"
             >
               Search Homes for Sale
             </a>
-            <Link href="/services" className="text-slate-600 hover:text-slate-900">
-              Services
-            </Link>
-            <Link href="/about" className="text-slate-600 hover:text-slate-900">
-              About
-            </Link>
-            <Link href="/new-homes" className="text-slate-600 hover:text-slate-900">
-              New Homes
-            </Link>
-            <Link href="/sellers" className="text-slate-600 hover:text-slate-900">
-              Sell Your Home
-            </Link>
-            <Link href="/neighborhoods" className="text-slate-600 hover:text-slate-900">
-              Neighborhoods
-            </Link>
-            <Link href="/luxury" className="text-slate-600 hover:text-slate-900">
-              Luxury Homes
-            </Link>
-            <Link href="/55-plus" className="text-slate-600 hover:text-slate-900">
-              55+ Communities
-            </Link>
-            <Link href="/relocation" className="text-slate-600 hover:text-slate-900">
-              Relocation Guide
-            </Link>
-            <Link href="/market-report" className="text-slate-600 hover:text-slate-900">
-              Market Report
-            </Link>
-            <Link href="/contact" className="text-slate-600 hover:text-slate-900">
-              Contact
-            </Link>
-            <a
-              href={gbpReviewUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-900"
-            >
-              Google Reviews
-            </a>
-          </div>
+            {footerNav.map((item) => (
+              <Link key={item.href} href={item.href} className="hover:text-white">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
-        <p className="text-xs text-slate-500 mt-6">
-          Our neighborhood guides, relocation guide, and market insights are kept current for California-to-Las-Vegas relocators. Last updated: {new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })} | {siteUrl.replace("https://", "")} – {agent.brokerage}
+        <p className="mx-auto mt-8 max-w-6xl text-xs text-slate-500">
+          Neighborhood guides, relocation notes, and market pages are reviewed for
+          California-to-Las-Vegas buyers. Last updated: {monthYear} |{" "}
+          {siteUrl.replace("https://", "")} – {agent.brokerage}. Equal Housing
+          Opportunity.
         </p>
       </div>
     </footer>

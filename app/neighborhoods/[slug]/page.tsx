@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { neighborhoods } from "@/lib/neighborhoods";
-import { siteConfig } from "@/lib/site-config";
 import { CalendlyLink } from "@/components/CalendlyLink";
+import { JsonLd } from "@/components/JsonLd";
+import { FaqBlock } from "@/components/sections/FaqBlock";
+import { Button } from "@/components/ui/button";
+import type { FaqItem } from "@/lib/faqs";
+import { neighborhoods } from "@/lib/neighborhoods";
+import { breadcrumbNode, faqPageNode, webPageNode } from "@/lib/schema";
+import { siteConfig } from "@/lib/site-config";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -22,57 +27,91 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function neighborhoodFaqs(
+  name: string,
+  priceFrom: string,
+): FaqItem[] {
+  return [
+    {
+      q: `What do homes cost in ${name}?`,
+      a: `Current listings on this site start at ${priceFrom}. That is a list-price floor, not an appraisal. Ask Dr. Duffy for comps on a specific address before you write an offer.`,
+    },
+    {
+      q: `Who helps California buyers looking in ${name}?`,
+      a: `Dr. Jan Duffy, license S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties. Call (949) 776-3527 or book a 15-minute call. The Irvine office is 18600 MacArthur Blvd., Suite 150.`,
+    },
+  ];
+}
+
 export default async function NeighborhoodPage({ params }: Props) {
   const { slug } = await params;
   const neighborhood = neighborhoods.find((n) => n.slug === slug);
   if (!neighborhood) notFound();
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.siteUrl },
-      { "@type": "ListItem", position: 2, name: "Neighborhoods", item: `${siteConfig.siteUrl}/neighborhoods` },
-      { "@type": "ListItem", position: 3, name: neighborhood.name, item: `${siteConfig.siteUrl}/neighborhoods/${slug}` },
-    ],
-  };
+  const faqs = neighborhoodFaqs(neighborhood.name, neighborhood.priceFrom);
+  const path = `/neighborhoods/${slug}`;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12">
-      <nav className="text-sm text-slate-600 mb-6" aria-label="Breadcrumb">
-        <Link href="/" className="hover:text-slate-900">Home</Link>
+    <div className="mx-auto max-w-6xl px-4 py-12">
+      <JsonLd
+        nodes={[
+          webPageNode({
+            path,
+            name: `Homes for Sale in ${neighborhood.name}`,
+            description: neighborhood.description,
+            speakable: true,
+          }),
+          breadcrumbNode([
+            { name: "Home", path: "/" },
+            { name: "Neighborhoods", path: "/neighborhoods" },
+            { name: neighborhood.name, path },
+          ]),
+          faqPageNode(faqs),
+          {
+            "@type": "Place",
+            name: neighborhood.name,
+            description: neighborhood.description,
+            containedInPlace: { "@type": "City", name: "Las Vegas" },
+          },
+        ]}
+      />
+      <nav className="mb-6 text-sm text-slate-600" aria-label="Breadcrumb">
+        <Link href="/" className="hover:text-slate-900">
+          Home
+        </Link>
         <span className="mx-2">/</span>
-        <Link href="/neighborhoods" className="hover:text-slate-900">Neighborhoods</Link>
+        <Link href="/neighborhoods" className="hover:text-slate-900">
+          Neighborhoods
+        </Link>
         <span className="mx-2">/</span>
         <span className="text-slate-900">{neighborhood.name}</span>
       </nav>
 
-      <h1 className="text-3xl font-bold text-slate-900 mb-4">
-        {neighborhood.name}
+      <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+        Homes for sale in {neighborhood.name}
       </h1>
-      <p className="text-slate-600 mb-2">Homes from {neighborhood.priceFrom}</p>
-      <p className="text-slate-700 mb-8">
-        {neighborhood.description} Browse current listings or contact us for a personalized tour.
+      <p className="mt-2 text-slate-600">Listings from {neighborhood.priceFrom}</p>
+      <p id="aeo-answer" className="mt-4 max-w-3xl text-slate-700">
+        {neighborhood.description} Dr. Jan Duffy can pull live MLS results and
+        schedule showings around a California departure date.
       </p>
 
-      <div className="flex flex-wrap gap-4">
-        <a
-          href={siteConfig.realscoutUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-slate-900 text-white px-5 py-2 rounded font-medium hover:bg-slate-800"
-        >
-          View homes in {neighborhood.name}
-        </a>
-        <CalendlyLink className="inline-block border border-slate-900 text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-50">
+      <div className="mt-8 flex flex-wrap gap-3">
+        <Button asChild>
+          <a
+            href={siteConfig.realscoutUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View homes in {neighborhood.name}
+          </a>
+        </Button>
+        <CalendlyLink className="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-50">
           Schedule a call
         </CalendlyLink>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <FaqBlock faqs={faqs} heading={`${neighborhood.name} questions`} />
     </div>
   );
 }

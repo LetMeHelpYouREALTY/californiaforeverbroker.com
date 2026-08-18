@@ -1,65 +1,118 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site-config";
 import { CalendlyInline } from "@/components/CalendlyInline";
+import { JsonLd } from "@/components/JsonLd";
+import { Button } from "@/components/ui/button";
+import { webPageNode } from "@/lib/schema";
+import {
+  callUrl,
+  directionsUrl,
+  mapEmbedSrc,
+  siteConfig,
+} from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Contact | Buy a Home in Las Vegas or Henderson",
   description:
-    "Contact Dr. Jan Duffy to buy a home in Las Vegas or Henderson. California relocation, first-time homebuyer help, and neighborhood tours. Call or send a message.",
+    "Contact Dr. Jan Duffy at 18600 MacArthur Blvd., Suite 150, Irvine, CA 92612. Call (949) 776-3527. Monday–Friday 8:30 a.m.–5:00 p.m. PT.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
-  const { nap, agent } = siteConfig;
+  const { nap, agent, hoursDisplay, hoursNote } = siteConfig;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12">
-      <h1 className="text-3xl font-bold text-slate-900 mb-6">
-        Contact Us
+    <div className="mx-auto max-w-6xl px-4 py-12">
+      <JsonLd
+        nodes={[
+          webPageNode({
+            path: "/contact",
+            name: "Contact Dr. Jan Duffy",
+            description: metadata.description as string,
+            speakable: true,
+          }),
+        ]}
+      />
+      <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+        Contact Dr. Jan Duffy
       </h1>
+      <p id="aeo-answer" className="mt-4 max-w-3xl text-slate-700">
+        Call {nap.phoneDisplay} or book a 15-minute Calendly slot. The office is{" "}
+        {nap.streetAddress}. Hours: {hoursDisplay}.
+      </p>
 
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="mt-10 grid gap-10 md:grid-cols-2">
         <div>
-          <p className="text-slate-700 mb-6">
-            Schedule an appointment with Dr. Jan Duffy for your homebuying or relocation plan. You get accountable, licensed representation—one clear point of contact for your California-to-Las-Vegas move. Whether you're interested in resale, new construction, or builder incentives in Las Vegas and Henderson, we're here to help. <a href={siteConfig.realscoutUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Search homes for sale</a>, read our <Link href="/relocation" className="text-blue-600 hover:underline">relocation guide</Link>, or <Link href="/new-homes" className="text-blue-600 hover:underline">new construction & builder incentives</Link>—then call or send a message to get started.
-          </p>
-          <div className="space-y-3 text-slate-700">
+          <address className="not-italic text-slate-700">
             <p className="font-semibold text-slate-900">{nap.name}</p>
             <p>{agent.brokerage}</p>
             <p>License {agent.license}</p>
-            <p>{nap.streetAddress}</p>
-            <a
-              href={`tel:${nap.phone}`}
-              className="block text-blue-600 hover:underline font-medium"
-            >
-              {nap.phoneDisplay}
-            </a>
+            <p>{nap.street}</p>
+            <p>
+              {nap.addressLocality}, {nap.addressRegion} {nap.postalCode}
+            </p>
+            <p className="mt-3">
+              <span className="font-medium">Hours: </span>
+              {hoursDisplay}
+            </p>
+            <p className="text-sm text-slate-500">{hoursNote}</p>
+          </address>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button asChild>
+              <a href={callUrl}>Call {nap.phoneDisplay}</a>
+            </Button>
+            <Button asChild variant="outline">
+              <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
+                Directions
+              </a>
+            </Button>
+            <Button asChild variant="outline">
+              <a
+                href={siteConfig.gbpReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Google Reviews
+              </a>
+            </Button>
           </div>
-          <a
-            href={`tel:${nap.phone}`}
-            className="mt-6 inline-block bg-slate-900 text-white px-5 py-2 rounded font-medium hover:bg-slate-800"
-          >
-            Call {nap.phoneDisplay}
-          </a>
+          <p className="mt-6 text-sm text-slate-600">
+            Search{" "}
+            <a
+              href={siteConfig.realscoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-800 underline"
+            >
+              homes for sale
+            </a>
+            , read the{" "}
+            <Link href="/relocation" className="text-sky-800 underline">
+              relocation guide
+            </Link>
+            , or review{" "}
+            <Link href="/new-homes" className="text-sky-800 underline">
+              new construction
+            </Link>
+            .
+          </p>
         </div>
-
         <div>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">
-            Book a 15-minute call with Dr. Jan Duffy
+          <h2 className="text-xl font-bold text-slate-900">
+            Book a 15-minute call
           </h2>
-          <CalendlyInline />
+          <div className="mt-3">
+            <CalendlyInline />
+          </div>
         </div>
       </div>
 
       <section className="mt-12">
-        <h2 className="text-xl font-bold text-slate-900 mb-4">
-          Office location
-        </h2>
-        <div className="aspect-video bg-slate-200 rounded-lg overflow-hidden">
+        <h2 className="text-xl font-bold text-slate-900">Office map</h2>
+        <div className="mt-4 aspect-video overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
           <iframe
-            title="Office map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206253.450066447!2d-115.315399!3d36.124961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c2f2b3b3b3b3%3A0x0!2sLas%20Vegas%2C%20NV!5e0!3m2!1sen!2sus!4v1"
+            title={`Map to ${nap.streetAddress}`}
+            src={mapEmbedSrc}
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -68,9 +121,6 @@ export default function ContactPage() {
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
-        <p className="text-sm text-slate-500 mt-2">
-          Serving Las Vegas and Henderson. Schedule a call or visit.
-        </p>
       </section>
     </div>
   );
