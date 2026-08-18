@@ -7,7 +7,9 @@ import { CalendlyBadge } from "@/components/CalendlyBadge";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site-config";
 
-const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const googleVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+  siteConfig.googleSiteVerification;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),

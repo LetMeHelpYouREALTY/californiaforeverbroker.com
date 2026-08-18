@@ -21,6 +21,12 @@ export const siteConfig = {
   },
   /** Canonical host. Must match Vercel primary domain and GBP (www). */
   siteUrl: "https://www.californiaforeverbroker.com",
+  /**
+   * Google Search Console HTML-tag token. Same value as the apex DNS TXT
+   * google-site-verification record (public). Used so the www host can
+   * verify as a URL-prefix property without a new DNS row.
+   */
+  googleSiteVerification: "KVbX629PHY0wc9UPDUMpX4c_eiJL2HcMhclQmeQ-KRs",
   gbpReviewUrl: "https://g.page/r/heyberkshire/review",
   realscoutUrl: "http://drjanduffy.realscout.com/",
   calendlyUrl: "https://calendly.com/drjanduffy/dr-duffy-private-15-min-conversation",
