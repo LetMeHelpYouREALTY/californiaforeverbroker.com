@@ -6,6 +6,10 @@ body {
   margin: 0;
 }
 
+a {
+  @apply text-cabernet;
+}
+
 details > summary {
   list-style: none;
 }

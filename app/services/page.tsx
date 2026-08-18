@@ -23,11 +23,11 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
-      <h1 className="text-3xl font-bold text-slate-900 mb-6">
+      <h1 className="text-3xl font-bold text-espresso mb-6">
         Real Estate Services
       </h1>
 
-      <p className="text-lg text-slate-700 mb-10">
+      <p className="text-lg text-earth mb-10">
         Whether you're buying, selling, or relocating from California to Las Vegas or Henderson, we offer full-service support backed by Berkshire Hathaway HomeServices Nevada Properties.
       </p>
 
@@ -36,19 +36,19 @@ export default function ServicesPage() {
           <Link
             key={href}
             href={href}
-            className="block p-6 bg-slate-50 border border-slate-200 rounded-lg hover:border-slate-300 hover:bg-slate-100 transition-colors"
+            className="block p-6 bg-pearl border border-rose rounded-lg hover:border-dove hover:bg-rose transition-colors"
           >
-            <h2 className="text-xl font-bold text-slate-900 mb-2">{title}</h2>
-            <p className="text-slate-700">{description}</p>
-            <span className="inline-block mt-2 text-blue-600 font-medium">
+            <h2 className="text-xl font-bold text-espresso mb-2">{title}</h2>
+            <p className="text-earth">{description}</p>
+            <span className="inline-block mt-2 text-cabernet font-medium">
               Learn more →
             </span>
           </Link>
         ))}
       </section>
 
-      <section className="border-t border-slate-200 pt-8">
-        <p className="text-slate-700 mb-4">
+      <section className="border-t border-rose pt-8">
+        <p className="text-earth mb-4">
           Ready to get started? Search homes, read our relocation guide, or schedule a call with Dr. Jan Duffy.
         </p>
         <div className="flex flex-wrap gap-4">
@@ -56,16 +56,16 @@ export default function ServicesPage() {
             href={siteConfig.realscoutUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-slate-900 text-white px-5 py-2 rounded font-medium hover:bg-slate-800"
+            className="inline-block bg-cabernet text-white px-5 py-2 rounded font-medium hover:bg-cabernet-dark"
           >
             Search homes for sale
           </a>
-          <CalendlyLink className="inline-block border border-slate-900 text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-900 hover:text-white">
+          <CalendlyLink className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white">
             Schedule a call
           </CalendlyLink>
           <Link
             href="/contact"
-            className="inline-block border border-slate-900 text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-900 hover:text-white"
+            className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white"
           >
             Contact
           </Link>

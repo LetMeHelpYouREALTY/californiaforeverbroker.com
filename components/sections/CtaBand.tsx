@@ -9,10 +9,10 @@ type CtaBandProps = {
 
 export function CtaBand({ title, body }: CtaBandProps) {
   return (
-    <section className="bg-slate-950 px-4 py-14 text-white">
+    <section className="bg-cabernet px-4 py-14 text-white">
       <div className="mx-auto max-w-6xl text-center">
         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-slate-300">{body}</p>
+        <p className="mx-auto mt-3 max-w-2xl text-rose">{body}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button asChild variant="secondary">
             <a

@@ -45,24 +45,24 @@ export default function RelocationPage() {
           faqPageNode(relocationFaqs),
         ]}
       />
-      <h1 className="text-3xl font-bold text-slate-900 mb-6">
+      <h1 className="text-3xl font-bold text-espresso mb-6">
         California to Las Vegas Relocation Guide
       </h1>
 
-      <section className="prose prose-slate max-w-none mb-10">
-        <p id="aeo-answer" className="text-lg text-slate-700">
+      <section className="prose prose-neutral max-w-none mb-10">
+        <p id="aeo-answer" className="text-lg text-earth">
           More California homebuyers are choosing Las Vegas and Henderson for lower taxes, affordable housing, and a strong quality of life. Here's what you need to know and how to plan your move.
         </p>
-        <p className="text-slate-700">
+        <p className="text-earth">
           This guide is a durable resource—we keep our relocation content, neighborhood insights, and market data current so you get lasting value. You also get one accountable partner: a licensed real estate professional backed by Berkshire Hathaway HomeServices, so your relocation is handled with clarity and compliance from start to finish.
         </p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+        <h2 className="text-2xl font-bold text-espresso mb-4">
           Why Move from California to Las Vegas?
         </h2>
-        <ul className="list-disc list-inside space-y-2 text-slate-700">
+        <ul className="list-disc list-inside space-y-2 text-earth">
           <li><strong>No state income tax</strong> — Nevada residents keep more of their paycheck.</li>
           <li><strong>Lower cost of living</strong> — Housing, utilities, and everyday expenses are typically lower than in most California metros.</li>
           <li><strong>Strong job market</strong> — Las Vegas has diversified beyond gaming; healthcare, tech, and logistics are growing.</li>
@@ -71,50 +71,50 @@ export default function RelocationPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+        <h2 className="text-2xl font-bold text-espresso mb-4">
           Cost of Living & Taxes
         </h2>
-        <p className="text-slate-700 mb-4">
+        <p className="text-earth mb-4">
           Nevada has no state income tax, which can mean significant savings compared to California's top marginal rates. Property taxes work differently; we can provide a side-by-side comparison for your situation. Overall, many relocators find they get more home for their budget in the Las Vegas valley.
         </p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+        <h2 className="text-2xl font-bold text-espresso mb-4">
           Schools and commute
         </h2>
-        <p className="text-slate-700 mb-4">
+        <p className="text-earth mb-4">
           Clark County School District serves the Las Vegas valley. We share
           school names and attendance boundaries for any address you short-list,
           plus typical drive times to the 215, I-15, and McCarran/Harry Reid.
         </p>
       </section>
 
-      <section className="mb-10 bg-slate-50 p-6 rounded-lg">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+      <section className="mb-10 bg-pearl p-6 rounded-lg">
+        <h2 className="text-2xl font-bold text-espresso mb-4">
           New Construction & Builder Incentives
         </h2>
-        <p className="text-slate-700 mb-4">
+        <p className="text-earth mb-4">
           Many California homebuyers choose new construction in Summerlin, Henderson, North Las Vegas, or Lake Las Vegas. Builders often offer rate buydowns and closing cost credits—incentives change often, so working with a Realtor who tracks them helps you get the best deal. Dr. Jan Duffy represents buyers at no extra cost and can walk you through current communities and promos.
         </p>
-        <p className="text-slate-700 mb-4">
-          <Link href="/new-homes" className="text-blue-600 hover:underline font-medium">See our new construction & builder incentives page</Link> for an overview, then <CalendlyLink className="text-blue-600 hover:underline font-medium">schedule an appointment</CalendlyLink> to discuss your homebuying plan.
+        <p className="text-earth mb-4">
+          <Link href="/new-homes" className="text-cabernet hover:underline font-medium">See our new construction & builder incentives page</Link> for an overview, then <CalendlyLink className="text-cabernet hover:underline font-medium">schedule an appointment</CalendlyLink> to discuss your homebuying plan.
         </p>
         <div className="flex flex-wrap gap-4">
-          <Link href="/new-homes" className="inline-block bg-slate-900 text-white px-5 py-2 rounded font-medium hover:bg-slate-800">
+          <Link href="/new-homes" className="inline-block bg-cabernet text-white px-5 py-2 rounded font-medium hover:bg-cabernet-dark">
             New homes & builder incentives
           </Link>
-          <CalendlyLink className="inline-block border border-slate-900 text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-900 hover:text-white">
+          <CalendlyLink className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white">
             Schedule a call with Dr. Jan Duffy
           </CalendlyLink>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+        <h2 className="text-2xl font-bold text-espresso mb-4">
           Relocation Checklist
         </h2>
-        <ol className="list-decimal list-inside space-y-2 text-slate-700">
+        <ol className="list-decimal list-inside space-y-2 text-earth">
           {checklist.map((step) => (
             <li key={step}>{step}</li>
           ))}
@@ -123,11 +123,11 @@ export default function RelocationPage() {
 
       <FaqBlock faqs={relocationFaqs} />
 
-      <section className="bg-slate-100 p-6 rounded-lg">
-        <h2 className="text-xl font-bold text-slate-900 mb-3">
+      <section className="bg-rose p-6 rounded-lg">
+        <h2 className="text-xl font-bold text-espresso mb-3">
           Ready to look at homes for sale?
         </h2>
-        <p className="text-slate-700 mb-4">
+        <p className="text-earth mb-4">
           Dr. Jan Duffy specializes in helping California homebuyers relocate to Las Vegas and Henderson. Search current listings or get personalized guidance and local market insight.
         </p>
         <div className="flex flex-wrap gap-4">
@@ -135,17 +135,17 @@ export default function RelocationPage() {
             href={siteConfig.realscoutUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-slate-900 text-white px-5 py-2 rounded font-medium hover:bg-slate-800"
+            className="inline-block bg-cabernet text-white px-5 py-2 rounded font-medium hover:bg-cabernet-dark"
           >
             Search homes for sale
           </a>
           <a
             href={`tel:${siteConfig.nap.phone}`}
-            className="inline-block border border-slate-900 text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-900 hover:text-white"
+            className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white"
           >
             Call {siteConfig.nap.phoneDisplay}
           </a>
-          <CalendlyLink className="inline-block border border-slate-900 text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-900 hover:text-white">
+          <CalendlyLink className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white">
             Schedule a call
           </CalendlyLink>
         </div>

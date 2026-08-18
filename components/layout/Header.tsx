@@ -18,8 +18,8 @@ export function Header() {
   const { nap, name } = siteConfig;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="bg-slate-950 px-4 py-2 text-xs text-slate-200">
+    <header className="sticky top-0 z-40 border-b border-rose bg-white/95 backdrop-blur">
+      <div className="bg-espresso px-4 py-2 text-xs text-cream">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2">
           <p>
             {nap.street} · {nap.addressLocality}, {nap.addressRegion}{" "}
@@ -27,7 +27,7 @@ export function Header() {
           </p>
           <a
             href={callUrl}
-            className="inline-flex items-center gap-1 font-semibold text-white hover:text-sky-200"
+            className="inline-flex items-center gap-1 font-semibold text-white hover:text-cream"
           >
             <Phone className="h-3.5 w-3.5" aria-hidden />
             {nap.phoneDisplay}
@@ -35,15 +35,15 @@ export function Header() {
         </div>
       </div>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="shrink-0 text-lg font-semibold tracking-tight text-slate-900">
+        <Link href="/" className="shrink-0 text-lg font-semibold tracking-tight text-espresso">
           {name}
         </Link>
         <nav
-          className="hidden flex-wrap items-center gap-4 text-sm text-slate-700 lg:flex"
+          className="hidden flex-wrap items-center gap-4 text-sm text-earth lg:flex"
           aria-label="Main"
         >
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-sky-800">
+            <Link key={item.href} href={item.href} className="hover:text-cabernet-dark">
               {item.label}
             </Link>
           ))}
@@ -51,31 +51,31 @@ export function Header() {
             href={siteConfig.realscoutUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-sky-800 hover:text-sky-900"
+            className="font-medium text-cabernet hover:text-cabernet-dark"
           >
             Search homes
           </a>
-          <CalendlyLink className="rounded-md bg-sky-700 px-4 py-2 font-semibold text-white hover:bg-sky-800">
+          <CalendlyLink className="rounded-md bg-cabernet px-4 py-2 font-semibold text-white hover:bg-cabernet-dark">
             Book a call
           </CalendlyLink>
         </nav>
         <details className="relative lg:hidden">
-          <summary className="cursor-pointer list-none rounded-md border border-slate-300 px-3 py-2 text-sm font-medium">
+          <summary className="cursor-pointer list-none rounded-md border border-dove px-3 py-2 text-sm font-medium">
             Menu
           </summary>
-          <div className="absolute right-0 mt-2 w-56 rounded-md border border-slate-200 bg-white p-3 shadow-lg">
+          <div className="absolute right-0 mt-2 w-56 rounded-md border border-rose bg-white p-3 shadow-lg">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block py-1.5 text-sm text-slate-700 hover:text-sky-800"
+                className="block py-1.5 text-sm text-earth hover:text-cabernet-dark"
               >
                 {item.label}
               </Link>
             ))}
             <a
               href={callUrl}
-              className="mt-2 block py-1.5 text-sm font-semibold text-sky-800"
+              className="mt-2 block py-1.5 text-sm font-semibold text-cabernet"
             >
               Call {nap.phoneDisplay}
             </a>

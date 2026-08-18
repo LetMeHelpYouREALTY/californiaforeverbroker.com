@@ -17,33 +17,33 @@ export function LocalPresence({ showMap = true }: LocalPresenceProps) {
   return (
     <section
       id="visit"
-      className="border-t border-slate-200 bg-white py-12 px-4"
+      className="border-t border-rose bg-white py-12 px-4"
       aria-labelledby="local-presence-heading"
     >
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
         <div>
           <h2
             id="local-presence-heading"
-            className="text-2xl font-bold tracking-tight text-slate-900"
+            className="text-2xl font-bold tracking-tight text-espresso"
           >
             Office, hours, and contact
           </h2>
-          <p className="mt-2 text-slate-600">
+          <p className="mt-2 text-earth">
             {agent.name}, {agent.jobTitle}. License {agent.license}.{" "}
             {agent.brokerage}.
           </p>
-          <address className="mt-4 not-italic text-slate-800">
+          <address className="mt-4 not-italic text-espresso">
             <p className="font-semibold">{nap.name}</p>
             <p>{nap.street}</p>
             <p>
               {nap.addressLocality}, {nap.addressRegion} {nap.postalCode}
             </p>
           </address>
-          <p className="mt-3 text-slate-700">
+          <p className="mt-3 text-earth">
             <span className="font-medium">Hours: </span>
             {hoursDisplay}
           </p>
-          <p className="text-sm text-slate-500">{hoursNote}</p>
+          <p className="text-sm text-earth">{hoursNote}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild>
               <a href={callUrl}>
@@ -66,7 +66,7 @@ export function LocalPresence({ showMap = true }: LocalPresenceProps) {
           </div>
         </div>
         {showMap ? (
-          <div className="aspect-video overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+          <div className="aspect-video overflow-hidden rounded-xl border border-rose bg-rose">
             <iframe
               title={`Map to ${nap.streetAddress}`}
               src={mapEmbedSrc}

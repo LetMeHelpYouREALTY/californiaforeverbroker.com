@@ -46,15 +46,15 @@ export default function Home() {
         ]}
       />
 
-      <section className="bg-slate-950 px-4 py-16 text-white md:py-20">
+      <section className="bg-cabernet px-4 py-16 text-white md:py-20">
         <div className="mx-auto max-w-6xl">
-          <p className="text-sm font-medium uppercase tracking-wide text-sky-300">
+          <p className="text-sm font-medium uppercase tracking-wide text-blush">
             California Forever Broker · Las Vegas & Henderson
           </p>
           <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
             Buy a Las Vegas or Henderson home after a California move
           </h1>
-          <p id="aeo-answer" className="mt-5 max-w-2xl text-lg text-slate-300">
+          <p id="aeo-answer" className="mt-5 max-w-2xl text-lg text-rose">
             Dr. Jan Duffy, REALTOR®, license S.0197614.LLC, represents California
             homebuyers in Las Vegas and Henderson. Search live listings, compare
             10 neighborhoods, then book a 15-minute plan call at (949) 776-3527.
@@ -69,7 +69,7 @@ export default function Home() {
               Talk to Dr. Duffy
             </CalendlyLink>
           </div>
-          <p className="mt-6 text-sm text-slate-400">
+          <p className="mt-6 text-sm text-blush">
             Start with the{" "}
             <Link href="/relocation" className="text-white underline hover:no-underline">
               relocation guide
@@ -83,16 +83,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 px-4 py-12">
+      <section className="border-b border-rose px-4 py-12">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-espresso">
             Why California homebuyers look at Las Vegas
           </h2>
           <ul className="mt-6 grid gap-3 md:grid-cols-2">
             {whyRelocate.map((item) => (
               <li
                 key={item}
-                className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700"
+                className="rounded-lg border border-rose bg-pearl px-4 py-3 text-earth"
               >
                 {item}
               </li>
@@ -101,12 +101,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-50 px-4 py-12">
+      <section className="border-b border-rose bg-pearl px-4 py-12">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-espresso">
             Neighborhoods with homes for sale
           </h2>
-          <p className="mt-2 max-w-2xl text-slate-600">
+          <p className="mt-2 max-w-2xl text-earth">
             Compare list-price floors, commute corridors, and amenities. Figures
             are listing starting points, not appraisals.
           </p>
@@ -115,10 +115,10 @@ export default function Home() {
               <Link
                 key={n.slug}
                 href={`/neighborhoods/${n.slug}`}
-                className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-sky-700 hover:shadow-md"
+                className="rounded-xl border border-rose bg-white p-4 shadow-sm transition hover:border-cabernet hover:shadow-md"
               >
-                <span className="font-semibold text-slate-900">{n.name}</span>
-                <span className="mt-1 block text-sm text-slate-600">
+                <span className="font-semibold text-espresso">{n.name}</span>
+                <span className="mt-1 block text-sm text-earth">
                   Listings from {n.priceFrom}
                 </span>
               </Link>
@@ -127,28 +127,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 px-4 py-12">
+      <section className="border-b border-rose px-4 py-12">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-espresso">
             How Dr. Duffy works a relocation file
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {whyChooseUs.map(({ title, desc }) => (
-              <div key={title} className="rounded-xl border border-slate-200 p-5">
-                <h3 className="font-semibold text-slate-900">{title}</h3>
-                <p className="mt-1 text-sm text-slate-600">{desc}</p>
+              <div key={title} className="rounded-xl border border-rose p-5">
+                <h3 className="font-semibold text-espresso">{title}</h3>
+                <p className="mt-1 text-sm text-earth">{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-50 px-4 py-12">
+      <section className="border-b border-rose bg-pearl px-4 py-12">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-espresso">
             Client notes
           </h2>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-earth">
             Quotes below are client comments, not a Google star rating in schema.
             Read current reviews on Google.
           </p>
@@ -156,13 +156,13 @@ export default function Home() {
             {testimonials.map(({ name, location, text }) => (
               <blockquote
                 key={name}
-                className="rounded-xl border border-slate-200 bg-white p-5"
+                className="rounded-xl border border-rose bg-white p-5"
               >
-                <p className="text-sm text-slate-700">{text}</p>
-                <cite className="mt-3 block not-italic font-semibold text-slate-900">
+                <p className="text-sm text-earth">{text}</p>
+                <cite className="mt-3 block not-italic font-semibold text-espresso">
                   {name}
                 </cite>
-                <span className="text-sm text-slate-500">{location}</span>
+                <span className="text-sm text-earth">{location}</span>
               </blockquote>
             ))}
           </div>

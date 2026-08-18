@@ -33,18 +33,18 @@ export default function ContactPage() {
           }),
         ]}
       />
-      <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+      <h1 className="text-3xl font-bold tracking-tight text-espresso">
         Contact Dr. Jan Duffy
       </h1>
-      <p id="aeo-answer" className="mt-4 max-w-3xl text-slate-700">
+      <p id="aeo-answer" className="mt-4 max-w-3xl text-earth">
         Call {nap.phoneDisplay} or book a 15-minute Calendly slot. The office is{" "}
         {nap.streetAddress}. Hours: {hoursDisplay}.
       </p>
 
       <div className="mt-10 grid gap-10 md:grid-cols-2">
         <div>
-          <address className="not-italic text-slate-700">
-            <p className="font-semibold text-slate-900">{nap.name}</p>
+          <address className="not-italic text-earth">
+            <p className="font-semibold text-espresso">{nap.name}</p>
             <p>{agent.brokerage}</p>
             <p>License {agent.license}</p>
             <p>{nap.street}</p>
@@ -55,7 +55,7 @@ export default function ContactPage() {
               <span className="font-medium">Hours: </span>
               {hoursDisplay}
             </p>
-            <p className="text-sm text-slate-500">{hoursNote}</p>
+            <p className="text-sm text-earth">{hoursNote}</p>
           </address>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild>
@@ -76,29 +76,29 @@ export default function ContactPage() {
               </a>
             </Button>
           </div>
-          <p className="mt-6 text-sm text-slate-600">
+          <p className="mt-6 text-sm text-earth">
             Search{" "}
             <a
               href={siteConfig.realscoutUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sky-800 underline"
+              className="text-cabernet underline"
             >
               homes for sale
             </a>
             , read the{" "}
-            <Link href="/relocation" className="text-sky-800 underline">
+            <Link href="/relocation" className="text-cabernet underline">
               relocation guide
             </Link>
             , or review{" "}
-            <Link href="/new-homes" className="text-sky-800 underline">
+            <Link href="/new-homes" className="text-cabernet underline">
               new construction
             </Link>
             .
           </p>
         </div>
         <div>
-          <h2 className="text-xl font-bold text-slate-900">
+          <h2 className="text-xl font-bold text-espresso">
             Book a 15-minute call
           </h2>
           <div className="mt-3">
@@ -108,8 +108,8 @@ export default function ContactPage() {
       </div>
 
       <section className="mt-12">
-        <h2 className="text-xl font-bold text-slate-900">Office map</h2>
-        <div className="mt-4 aspect-video overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+        <h2 className="text-xl font-bold text-espresso">Office map</h2>
+        <div className="mt-4 aspect-video overflow-hidden rounded-xl border border-rose bg-rose">
           <iframe
             title={`Map to ${nap.streetAddress}`}
             src={mapEmbedSrc}

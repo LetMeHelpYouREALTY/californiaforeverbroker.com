@@ -20,10 +20,10 @@ const stats = [
 export default function MarketReportPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
-      <h1 className="text-3xl font-bold text-slate-900 mb-2">
+      <h1 className="text-3xl font-bold text-espresso mb-2">
         Las Vegas Real Estate Market Report
       </h1>
-      <p className="text-slate-600 mb-8">
+      <p className="text-earth mb-8">
         Snapshot figures below are not live MLS pulls. Verify median price, days
         on market, and inventory with Dr. Duffy before you write an offer. Last
         page review: August 2026.
@@ -33,16 +33,16 @@ export default function MarketReportPage() {
         {stats.map(({ label, value, sub }) => (
           <div
             key={label}
-            className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center"
+            className="bg-pearl border border-rose rounded-lg p-5 text-center"
           >
-            <p className="text-2xl font-bold text-slate-900">{value}</p>
-            <p className="text-sm text-slate-600">{label}</p>
-            {sub && <p className="text-xs text-slate-500 mt-1">{sub}</p>}
+            <p className="text-2xl font-bold text-espresso">{value}</p>
+            <p className="text-sm text-earth">{label}</p>
+            {sub && <p className="text-xs text-earth mt-1">{sub}</p>}
           </div>
         ))}
       </section>
 
-      <p className="text-slate-600 text-sm mb-8">
+      <p className="text-earth text-sm mb-8">
         Data is indicative and may vary by area and time. For the most current numbers and a personalized market snapshot for your target neighborhood, contact us.
       </p>
 
@@ -51,16 +51,16 @@ export default function MarketReportPage() {
           href={siteConfig.realscoutUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-slate-900 text-white px-5 py-2 rounded font-medium hover:bg-slate-800"
+          className="inline-block bg-cabernet text-white px-5 py-2 rounded font-medium hover:bg-cabernet-dark"
         >
           Search homes for sale
         </a>
-        <CalendlyLink className="inline-block border border-slate-900 text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-900 hover:text-white">
+        <CalendlyLink className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white">
           Schedule a call
         </CalendlyLink>
         <Link
           href="/contact"
-          className="inline-block border border-slate-900 text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-900 hover:text-white"
+          className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white"
         >
           Get a custom market report
         </Link>

@@ -72,31 +72,31 @@ export default function NewHomesPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
-      <h1 className="text-3xl font-bold text-slate-900 mb-6">
+      <h1 className="text-3xl font-bold text-espresso mb-6">
         New Construction & Builder Incentives in Las Vegas & Henderson
       </h1>
 
-      <section className="prose prose-slate max-w-none mb-10">
-        <p className="text-lg text-slate-700">
+      <section className="prose prose-neutral max-w-none mb-10">
+        <p className="text-lg text-earth">
           California homebuyers relocating to Las Vegas have more choices than ever: new construction in Summerlin, Henderson, North Las Vegas, and Lake Las Vegas, with builder incentives like rate buydowns and closing cost credits. Working with a Realtor costs you nothing—builders typically pay your agent—and you get an advocate who knows the communities, the fine print on incentives, and how to align your purchase with your timeline and budget.
         </p>
-        <p className="text-slate-700">
+        <p className="text-earth">
           <strong>Dr. Jan Duffy</strong> helps buyers navigate new construction and resale across the Las Vegas valley. You get accountable, licensed representation and one point of contact; we keep our builder and community intel updated so your decision is based on current information. Schedule a call or appointment to discuss your move, current builder incentives, and the best neighborhoods for your lifestyle.
         </p>
       </section>
 
       {/* CTA — primary conversion */}
-      <section className="bg-slate-900 text-white p-6 rounded-lg mb-10">
+      <section className="bg-cabernet text-white p-6 rounded-lg mb-10">
         <h2 className="text-xl font-bold mb-3">
           Schedule Your Homebuying Appointment with Dr. Jan Duffy
         </h2>
-        <p className="text-slate-300 mb-4">
+        <p className="text-rose mb-4">
           Get personalized guidance on new construction, builder incentives, and resale homes in Las Vegas and Henderson. One conversation can set you on the right path.
         </p>
         <div className="flex flex-wrap gap-4">
           <a
             href={`tel:${nap.phone}`}
-            className="inline-block bg-white text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-100"
+            className="inline-block bg-white text-espresso px-5 py-2 rounded font-medium hover:bg-rose"
           >
             Call {nap.phoneDisplay}
           </a>
@@ -108,21 +108,21 @@ export default function NewHomesPage() {
 
       {/* Builder overview */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+        <h2 className="text-2xl font-bold text-espresso mb-4">
           Builders & Communities We Track
         </h2>
-        <p className="text-slate-600 mb-6">
+        <p className="text-earth mb-6">
           Incentives and deadlines change frequently. The summary below is for orientation; we verify current offers when you're ready to explore. All pricing and promotions are subject to builder and lender terms.
         </p>
         <div className="space-y-6">
           {builders.map((b) => (
             <div
               key={b.name}
-              className="border border-slate-200 rounded-lg p-5 bg-white"
+              className="border border-rose rounded-lg p-5 bg-white"
             >
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{b.name}</h3>
-              <p className="text-slate-700 text-sm mb-2">{b.summary}</p>
-              <p className="text-slate-600 text-sm">
+              <h3 className="text-lg font-bold text-espresso mb-2">{b.name}</h3>
+              <p className="text-earth text-sm mb-2">{b.summary}</p>
+              <p className="text-earth text-sm">
                 <strong>Best for:</strong> {b.bestFor}
               </p>
             </div>
@@ -131,60 +131,60 @@ export default function NewHomesPage() {
       </section>
 
       {/* Why use a Realtor + CTA */}
-      <section className="mb-10 bg-slate-50 p-6 rounded-lg">
-        <h2 className="text-xl font-bold text-slate-900 mb-4">
+      <section className="mb-10 bg-pearl p-6 rounded-lg">
+        <h2 className="text-xl font-bold text-espresso mb-4">
           Why Work with Dr. Jan Duffy for Your Las Vegas Purchase
         </h2>
-        <ul className="list-disc list-inside space-y-2 text-slate-700 mb-4">
+        <ul className="list-disc list-inside space-y-2 text-earth mb-4">
           <li>One point of contact for new construction and resale across Las Vegas and Henderson</li>
           <li>Explanation of builder incentives, rate buydowns, and add-ons so you compare apples to apples</li>
           <li>Neighborhood expertise: Summerlin, Henderson, North Las Vegas, Lake Las Vegas, and more</li>
           <li>Focused on California relocators—taxes, timing, and a smooth move</li>
         </ul>
-        <p className="text-slate-700 mb-4">
+        <p className="text-earth mb-4">
           Buyer representation is typically paid by the seller or builder. Schedule a no-obligation call to discuss your goals.
         </p>
-        <CalendlyLink className="inline-block bg-slate-900 text-white px-5 py-2 rounded font-medium hover:bg-slate-800">
+        <CalendlyLink className="inline-block bg-cabernet text-white px-5 py-2 rounded font-medium hover:bg-cabernet-dark">
           Schedule an appointment
         </CalendlyLink>
       </section>
 
       {/* FAQ */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+        <h2 className="text-2xl font-bold text-espresso mb-4">
           Frequently Asked Questions
         </h2>
         <dl className="space-y-4">
           {builderFaqs.map(({ q, a }) => (
             <div key={q}>
-              <dt className="font-semibold text-slate-900">{q}</dt>
-              <dd className="text-slate-600 text-sm mt-1">{a}</dd>
+              <dt className="font-semibold text-espresso">{q}</dt>
+              <dd className="text-earth text-sm mt-1">{a}</dd>
             </div>
           ))}
         </dl>
       </section>
 
       {/* Final CTA */}
-      <section className="border-t border-slate-200 pt-8">
-        <h2 className="text-xl font-bold text-slate-900 mb-3">
+      <section className="border-t border-rose pt-8">
+        <h2 className="text-xl font-bold text-espresso mb-3">
           Ready to Start Your Las Vegas Home Search?
         </h2>
-        <p className="text-slate-600 mb-4">
+        <p className="text-earth mb-4">
           Whether you're interested in new construction or resale in Summerlin, Henderson, or elsewhere in the valley, Dr. Jan Duffy is here to help California homebuyers make a confident move.
         </p>
         <div className="flex flex-wrap gap-4">
           <a
             href={`tel:${nap.phone}`}
-            className="inline-block bg-slate-900 text-white px-5 py-2 rounded font-medium hover:bg-slate-800"
+            className="inline-block bg-cabernet text-white px-5 py-2 rounded font-medium hover:bg-cabernet-dark"
           >
             Call {nap.phoneDisplay}
           </a>
-          <CalendlyLink className="inline-block border border-slate-900 text-slate-900 px-5 py-2 rounded font-medium hover:bg-slate-900 hover:text-white">
+          <CalendlyLink className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white">
             Request an appointment
           </CalendlyLink>
           <Link
             href="/relocation"
-            className="text-blue-600 hover:underline font-medium"
+            className="text-cabernet hover:underline font-medium"
           >
             California to Las Vegas relocation guide →
           </Link>

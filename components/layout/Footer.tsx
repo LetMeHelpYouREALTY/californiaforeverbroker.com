@@ -26,14 +26,14 @@ export function Footer() {
   return (
     <footer className="mt-auto">
       <LocalPresence />
-      <div className="border-t border-slate-200 bg-slate-950 px-4 py-10 text-slate-300">
+      <div className="border-t border-cabernet-dark bg-espresso px-4 py-10 text-rose">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:justify-between">
           <div>
             <p className="font-semibold text-white">{agent.name}</p>
             <p className="mt-1 text-sm">
               License {agent.license} | {agent.brokerage}
             </p>
-            <CalendlyLink className="mt-3 inline-block text-sm font-medium text-sky-300 hover:text-white">
+            <CalendlyLink className="mt-3 inline-block text-sm font-medium text-blush hover:text-white">
               Book a 15-minute call
             </CalendlyLink>
           </div>
@@ -53,7 +53,7 @@ export function Footer() {
             ))}
           </nav>
         </div>
-        <p className="mx-auto mt-8 max-w-6xl text-xs text-slate-500">
+        <p className="mx-auto mt-8 max-w-6xl text-xs text-dove">
           Neighborhood guides, relocation notes, and market pages are reviewed for
           California-to-Las-Vegas buyers. Last updated: {monthYear} |{" "}
           {siteUrl.replace("https://", "")} – {agent.brokerage}. Equal Housing

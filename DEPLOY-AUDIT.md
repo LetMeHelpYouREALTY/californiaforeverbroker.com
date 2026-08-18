@@ -95,3 +95,30 @@ No code or config changes in the repo are required unless you later add an **Ign
 4. Save and **redeploy**.
 
 Your repo layout is: `app/`, `components/`, `lib/`, `next.config.mjs`, `package.json` at the root — so Root Directory must be empty (or `.`).
+
+---
+
+## Build error: "No Output Directory named public found"
+
+**Error (after `next build` succeeds):** `Error: No Output Directory named "public" found after the Build completed.`
+
+**Cause:** This repo is a Next.js App Router app. Next.js writes `.next/`, not `public/`. GitHub is connected to **two** Vercel projects:
+
+| GitHub check / environment | Project | Notes |
+|---|---|---|
+| `Vercel – californiaforeverbroker.com` | `californiaforeverbroker.com` (`prj_OtKFgqeAGlI5hRSpiQiqdFm0XGnD`) | Framework Next.js; Output Directory empty. Preview deploys succeed. |
+| `Vercel – californiaforeverbroker-live` | `californiaforeverbroker-live` | GitHub check that failed on `b63cc36`. Output Directory is `public` (static/"Other" preset). That is the log that ends in the missing-`public` error. |
+
+Do **not** add an empty `public/` folder to satisfy that check. If the live project stays on the static preset, Vercel would publish only `public/` and skip the Next.js app.
+
+**Repo fix (committed):** `vercel.json` sets `framework` to `nextjs`, `buildCommand` to `next build`, and `outputDirectory` to `null` so dashboard Output Directory=`public` cannot win.
+
+**Dashboard (still do this on `californiaforeverbroker-live`):**
+
+1. Vercel → **californiaforeverbroker-live** → **Settings** → **General** → **Build & Development Settings**.
+2. Framework Preset: **Next.js**.
+3. Output Directory: turn **Override** off (leave empty). Do not set `public`.
+4. Build Command: leave default (`next build` / `npm run build`).
+5. Save and redeploy.
+
+Production DNS already points at `californiaforeverbroker.com`. After previews are green, disconnect Git on `californiaforeverbroker-live` or delete that duplicate project so only one Vercel project builds this repo.

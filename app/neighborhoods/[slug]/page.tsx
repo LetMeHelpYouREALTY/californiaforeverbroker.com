@@ -75,23 +75,23 @@ export default async function NeighborhoodPage({ params }: Props) {
           },
         ]}
       />
-      <nav className="mb-6 text-sm text-slate-600" aria-label="Breadcrumb">
-        <Link href="/" className="hover:text-slate-900">
+      <nav className="mb-6 text-sm text-earth" aria-label="Breadcrumb">
+        <Link href="/" className="hover:text-espresso">
           Home
         </Link>
         <span className="mx-2">/</span>
-        <Link href="/neighborhoods" className="hover:text-slate-900">
+        <Link href="/neighborhoods" className="hover:text-espresso">
           Neighborhoods
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-slate-900">{neighborhood.name}</span>
+        <span className="text-espresso">{neighborhood.name}</span>
       </nav>
 
-      <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+      <h1 className="text-3xl font-bold tracking-tight text-espresso">
         Homes for sale in {neighborhood.name}
       </h1>
-      <p className="mt-2 text-slate-600">Listings from {neighborhood.priceFrom}</p>
-      <p id="aeo-answer" className="mt-4 max-w-3xl text-slate-700">
+      <p className="mt-2 text-earth">Listings from {neighborhood.priceFrom}</p>
+      <p id="aeo-answer" className="mt-4 max-w-3xl text-earth">
         {neighborhood.description} Dr. Jan Duffy can pull live MLS results and
         schedule showings around a California departure date.
       </p>
@@ -106,7 +106,7 @@ export default async function NeighborhoodPage({ params }: Props) {
             View homes in {neighborhood.name}
           </a>
         </Button>
-        <CalendlyLink className="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-50">
+        <CalendlyLink className="inline-flex items-center justify-center rounded-md border border-dove px-5 py-2.5 text-sm font-semibold text-espresso hover:bg-pearl">
           Schedule a call
         </CalendlyLink>
       </div>

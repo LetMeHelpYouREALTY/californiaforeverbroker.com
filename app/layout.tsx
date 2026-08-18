@@ -92,9 +92,9 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
       </head>
-      <body className="flex min-h-screen flex-col bg-slate-50 text-slate-900 antialiased">
+      <body className="flex min-h-screen flex-col bg-pearl text-espresso antialiased">
         <Header />
-        <main className="flex-1 bg-white">{children}</main>
+        <main className="flex-1 bg-cream">{children}</main>
         <Footer />
         <CalendlyBadge />
         <Analytics />
