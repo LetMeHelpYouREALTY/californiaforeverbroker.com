@@ -1,28 +1,32 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { apexHost, canonicalHost, canonicalUrl } from "@/lib/seo";
+import { canonicalHost, canonicalUrl, redirectTarget, stripTrailingSlash } from "@/lib/seo";
 
 /**
- * Permanent apex → www. Vercel’s domain setting currently emits 307,
- * which Google does not treat as a user-selected canonical.
- * This 308 still runs if the platform redirect is removed or skipped.
+ * Collapse apex + trailing-slash variants into one absolute www URL.
+ * Vercel’s default slash 308 uses a relative Location, and a catch-all
+ * host redirect can 308 www to itself — both show up in GSC as
+ * “Redirect error” (loop, chain, or empty/bad Location).
  */
 export function middleware(request: NextRequest) {
-  const host = request.headers.get("host")?.split(":")[0]?.toLowerCase() ?? "";
+  const host = request.headers.get("host") ?? "";
+  const target = redirectTarget({
+    protocol: request.nextUrl.protocol,
+    host,
+    pathname: request.nextUrl.pathname,
+    search: request.nextUrl.search,
+  });
 
-  if (host === apexHost) {
-    const url = request.nextUrl.clone();
-    url.protocol = "https:";
-    url.hostname = canonicalHost;
-    url.port = "";
-    return NextResponse.redirect(url, 308);
+  if (target) {
+    return NextResponse.redirect(target, 308);
   }
 
   const response = NextResponse.next();
-  if (host === canonicalHost) {
+  const hostname = host.split(":")[0]?.toLowerCase() ?? "";
+  if (hostname === canonicalHost) {
     response.headers.append(
       "Link",
-      `<${canonicalUrl(request.nextUrl.pathname)}>; rel="canonical"`,
+      `<${canonicalUrl(stripTrailingSlash(request.nextUrl.pathname))}>; rel="canonical"`,
     );
   }
   return response;

@@ -2,13 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "buildCommand": "next build",
-  "outputDirectory": null,
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "californiaforeverbroker.com" }],
-      "destination": "https://www.californiaforeverbroker.com/:path*",
-      "statusCode": 308
-    }
-  ]
+  "outputDirectory": null
 }

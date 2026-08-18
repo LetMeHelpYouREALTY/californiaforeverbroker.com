@@ -1,6 +1,6 @@
 import { mapsRankTechniques } from "@/lib/maps-ranking/factors";
 import type { AuditCheck, AuditStatus } from "@/lib/maps-ranking/types";
-import { canonicalUrl } from "@/lib/seo";
+import { canonicalUrl, redirectTarget } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 function statusFor(ok: boolean, warn = false): AuditStatus {
@@ -28,6 +28,29 @@ export function runMapsRankAudit(): {
           "https://www.californiaforeverbroker.com/relocation",
       ),
       detail: canonicalUrl("/relocation"),
+    },
+    {
+      id: "no-www-self-redirect",
+      status: statusFor(
+        redirectTarget({
+          protocol: "https:",
+          host: "www.californiaforeverbroker.com",
+          pathname: "/neighborhoods/summerlin",
+        }) === null,
+      ),
+      detail: "www neighborhood URLs must 200, not 308 to themselves",
+    },
+    {
+      id: "slash-to-absolute-www",
+      status: statusFor(
+        redirectTarget({
+          protocol: "https:",
+          host: "www.californiaforeverbroker.com",
+          pathname: "/neighborhoods/centennial-hills/",
+        }) ===
+          "https://www.californiaforeverbroker.com/neighborhoods/centennial-hills",
+      ),
+      detail: "trailing slash 308 must be an absolute www URL",
     },
     {
       id: "nap-irvine",
