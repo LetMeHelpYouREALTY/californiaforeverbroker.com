@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyLink } from "@/components/CalendlyLink";
 import { JsonLd } from "@/components/JsonLd";
@@ -7,7 +8,13 @@ import { Button } from "@/components/ui/button";
 import { homeFaqs } from "@/lib/faqs";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { faqPageNode, webPageNode } from "@/lib/schema";
+import { homeShare, pageSeo } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = pageSeo("/", {
+  title: { absolute: homeShare.title },
+  description: homeShare.description,
+});
 
 const whyRelocate = [
   "Nevada has no state income tax — keep more of what you earn",

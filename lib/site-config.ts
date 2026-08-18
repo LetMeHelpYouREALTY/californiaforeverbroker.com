@@ -10,7 +10,7 @@ export const siteConfig = {
   name: "California Forever Broker",
   tagline: "California Homebuyers Moving to Las Vegas",
   description:
-    "Dr. Jan Duffy helps California homebuyers purchase homes in Las Vegas and Henderson. Search listings, compare neighborhoods, and plan a California-to-Nevada move.",
+    "Dr. Jan Duffy helps California buyers purchase homes in Las Vegas and Henderson. Search listings, compare neighborhoods, plan a move. (949) 776-3527.",
   agent: {
     name: "Dr. Jan Duffy",
     license: "S.0197614.LLC",

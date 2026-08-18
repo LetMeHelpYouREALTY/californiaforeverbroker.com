@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CalendlyBadge } from "@/components/CalendlyBadge";
 import { JsonLd } from "@/components/JsonLd";
 import { siteEntityGraph } from "@/lib/schema";
-import { canonicalUrl } from "@/lib/seo";
+import { canonicalUrl, homeShare } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 const googleVerification =
@@ -19,10 +19,10 @@ const googleVerification =
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "Homes for Sale Las Vegas & Henderson | California Forever Broker",
+    default: homeShare.title,
     template: "%s | California Forever Broker",
   },
-  description: siteConfig.description,
+  description: homeShare.description,
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.agent.name, url: `${siteConfig.siteUrl}/about` }],
   creator: siteConfig.agent.name,
@@ -50,17 +50,17 @@ export const metadata: Metadata = {
     ? { verification: { google: googleVerification } }
     : {}),
   openGraph: {
-    title: "Homes for Sale Las Vegas & Henderson | California Forever Broker",
-    description: siteConfig.description,
+    title: homeShare.title,
+    description: homeShare.description,
     url: canonicalUrl("/"),
     type: "website",
     locale: "en_US",
     siteName: siteConfig.name,
   },
   twitter: {
-    card: "summary",
-    title: "Homes for Sale Las Vegas & Henderson | California Forever Broker",
-    description: siteConfig.description,
+    card: "summary_large_image",
+    title: homeShare.title,
+    description: homeShare.description,
   },
   other: {
     "geo.region": "US-CA",
