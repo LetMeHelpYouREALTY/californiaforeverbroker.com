@@ -12,7 +12,7 @@ export const metadata: Metadata = pageSeo("/services", {
 
 const services = [
   { title: "Home Buying", href: "/", description: "First-time or repeat buyer—we guide you from search to closing with local market insight and negotiation." },
-  { title: "California Relocators", href: "/relocation", description: "Full relocation support: taxes, cost of living, schools, neighborhoods, and a clear checklist for your move to Las Vegas or Henderson." },
+  { title: "California Relocators", href: "/relocation", description: "Taxes, commute times, neighborhood fit, and a written checklist for a California-to-Las-Vegas move. Your California agent can earn a referral fee." },
   { title: "Home Selling", href: "/sellers", description: "Selling in California before you move, or selling in Nevada. We help you price, stage, and market for the best outcome." },
   { title: "Luxury Homes", href: "/luxury", description: "The Ridges, Southern Highlands, and other premium communities. Custom estates and high-end resale in Las Vegas and Henderson." },
   { title: "55+ & Active Adult", href: "/55-plus", description: "Active adult and 55+ communities in the Las Vegas valley. Amenities, lifestyle, and the right fit for your next chapter." },

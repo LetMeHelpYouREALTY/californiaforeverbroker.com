@@ -6,9 +6,9 @@ import { CalendlyLink } from "@/components/CalendlyLink";
 import { neighborhoods } from "@/lib/neighborhoods";
 
 export const metadata: Metadata = pageSeo("/luxury", {
-  title: "Luxury Homes Las Vegas & Henderson | The Ridges, Southern Highlands",
+  title: "Luxury Homes | The Ridges, The Summit, Red Rock Country Club",
   description:
-    "Luxury and high-end homes in Las Vegas and Henderson: The Ridges, Southern Highlands, and premium communities. Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
+    "Summerlin West luxury: The Ridges, The Summit, Red Rock Country Club, Stonebridge. Dr. Jan Duffy has sold Las Vegas homes since 1987. Call (949) 776-3527.",
 });
 
 const luxurySlugs = ["the-ridges", "southern-highlands", "summerlin", "henderson"];
@@ -23,10 +23,13 @@ export default function LuxuryPage() {
 
       <section className="prose prose-neutral max-w-none mb-10">
         <p className="text-lg text-earth">
-          From custom estates in The Ridges to premium resale in Southern Highlands, Summerlin, and Henderson, we help California relocators and luxury buyers find the right high-end property in Southern Nevada.
+          Summerlin and Summerlin West luxury is most of my high-end work: The
+          Ridges, The Summit, Red Rock Country Club, and Stonebridge. I also
+          cover Southern Highlands and Henderson estates.
         </p>
         <p className="text-earth">
-          Gated communities, mountain views, golf-course living, and top-tier finishes are all within reach. We bring local market knowledge and Berkshire Hathaway HomeServices marketing and network to your luxury purchase or sale.
+          Other agents call me for a read on view lots and what a street actually
+          closed at. You get the same person they do.
         </p>
       </section>
 

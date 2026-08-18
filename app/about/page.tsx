@@ -1,105 +1,208 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site-config";
-import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
+import { JsonLd } from "@/components/JsonLd";
+import { FaqBlock } from "@/components/sections/FaqBlock";
+import { GbpActions } from "@/components/sections/GbpActions";
+import { aboutFaqs, agentStory } from "@/lib/agent-story";
+import { faqPageNode, webPageNode } from "@/lib/schema";
+import { pageSeo } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
+
+const aboutDescription =
+  "Las Vegas native selling homes since 1987. $127 million closed, 500+ households. Dr. Jan Duffy, license S.0197614.LLC, Berkshire Hathaway HomeServices. Call (949) 776-3527.";
 
 export const metadata: Metadata = pageSeo("/about", {
-  title: "About Dr. Jan Duffy",
-  description:
-    "Meet Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Serving Las Vegas and Henderson since 2008. License S.0197614.LLC. Your trusted partner for California-to-Las-Vegas relocation.",
+  title: "About Dr. Jan Duffy, Las Vegas REALTOR® Since 1987",
+  description: aboutDescription,
 });
 
-const highlights = [
-  { label: "Nevada license", value: "S.0197614.LLC" },
-  { label: "Serving Las Vegas", value: "Since 2008" },
-  { label: "Brokerage", value: "BHHS NV" },
-];
-
 export default function AboutPage() {
-  const { nap, agent } = siteConfig;
+  const { nap, agent, zillowProfileUrl } = siteConfig;
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
-      <h1 className="text-3xl font-bold text-espresso mb-6">
-        About Dr. Jan Duffy
+      <JsonLd
+        nodes={[
+          webPageNode({
+            path: "/about",
+            name: "About Dr. Jan Duffy, REALTOR®",
+            description: aboutDescription,
+          }),
+          faqPageNode(aboutFaqs),
+        ]}
+      />
+
+      <p className="text-sm font-medium uppercase tracking-wide text-cabernet">
+        {agent.brokerage}
+      </p>
+      <h1 className="mt-2 text-3xl font-bold text-espresso md:text-4xl">
+        {agentStory.headline}
       </h1>
+      <p className="mt-3 text-xl text-earth">{agentStory.kicker}</p>
 
-      <section className="prose prose-neutral max-w-none mb-10">
-        <p className="text-lg text-earth">
-          Dr. Jan Duffy is a REALTOR® with <strong>{agent.brokerage}</strong>, specializing in Las Vegas and Henderson real estate—with a focus on California homebuyers relocating to Southern Nevada.
-        </p>
-        <p className="text-earth">
-          When you work with a Berkshire Hathaway HomeServices agent, you're backed by a name synonymous with trust, ethical standards, and financial strength—the same principles that built Warren Buffett's empire. You're not just getting one agent; you're getting a global network of 50,000+ agents, world-class marketing, and a brand that stands for accountability and results.
-        </p>
-      </section>
-
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-        {highlights.map(({ label, value }) => (
-          <div
-            key={label}
-            className="bg-pearl border border-rose rounded-lg p-5 text-center"
-          >
-            <p className="text-2xl font-bold text-espresso">{value}</p>
-            <p className="text-sm text-earth">{label}</p>
-          </div>
+      <section className="mt-8 space-y-4 text-earth">
+        {agentStory.origin.map((paragraph) => (
+          <p key={paragraph} className="text-lg leading-relaxed">
+            {paragraph}
+          </p>
         ))}
       </section>
 
-      <blockquote className="border-l-4 border-dove pl-6 py-2 my-10 text-earth italic">
-        "When clients ask why they should choose a Berkshire Hathaway HomeServices agent, I tell them: you're not just getting me—you're getting a global network of 50,000 agents, world-class marketing, and a brand that's synonymous with trust."
-        <cite className="block mt-2 not-italic text-earth font-medium">
-          — Dr. Jan Duffy, {agent.brokerage}
-        </cite>
-      </blockquote>
+      <section className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        {agentStory.stats.map(({ label, value }) => (
+          <div
+            key={label}
+            className="rounded-lg border border-rose bg-pearl p-5 text-center"
+          >
+            <p className="text-xl font-bold text-espresso">{value}</p>
+            <p className="mt-1 text-sm text-earth">{label}</p>
+          </div>
+        ))}
+      </section>
+      <p className="mt-3 text-sm text-earth">{agentStory.centuryAward}</p>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold text-espresso mb-4">
-          Why Choose Berkshire Hathaway HomeServices?
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-espresso">
+          {agentStory.selling.title}
         </h2>
-        <ul className="space-y-3 text-earth">
-          <li><strong>Trusted brand</strong> — Backed by Warren Buffett's Berkshire Hathaway Inc.; unmatched financial stability.</li>
-          <li><strong>Global network</strong> — 50,000+ agents worldwide for seamless referrals and relocations.</li>
-          <li><strong>Market expertise</strong> — Serving Las Vegas since 2008, with deep knowledge of neighborhoods, new construction, and relocation.</li>
-          <li><strong>Full service</strong> — Buying, selling, luxury, investment, and California relocation—we do it all.</li>
+        <ul className="mt-6 space-y-5">
+          {agentStory.selling.items.map((item) => (
+            <li key={item.title} className="rounded-lg border border-rose bg-white p-5">
+              <h3 className="font-semibold text-espresso">{item.title}</h3>
+              <p className="mt-2 text-earth">{item.body}</p>
+            </li>
+          ))}
         </ul>
       </section>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold text-espresso mb-4">
-          Contact Dr. Jan Duffy
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-espresso">
+          {agentStory.buying.title}
         </h2>
-        <div className="bg-pearl p-6 rounded-lg space-y-2 text-earth">
-          <p className="font-semibold text-espresso">{nap.name}</p>
-          <p>License {agent.license} | {agent.brokerage}</p>
-          <p>{nap.streetAddress}</p>
+        <ul className="mt-6 space-y-5">
+          {agentStory.buying.items.map((item) => (
+            <li key={item.title} className="rounded-lg border border-rose bg-white p-5">
+              <h3 className="font-semibold text-espresso">{item.title}</h3>
+              <p className="mt-2 text-earth">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-12 rounded-lg border border-rose bg-pearl p-6">
+        <h2 className="text-2xl font-bold text-espresso">
+          The agent other agents call
+        </h2>
+        <p className="mt-3 text-earth">{agentStory.peerLine}</p>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-espresso">
+          {agentStory.process.title}
+        </h2>
+        <ol className="mt-6 list-decimal space-y-3 pl-5 text-earth">
+          {agentStory.process.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ol>
+        <GbpActions />
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-espresso">What clients wrote</h2>
+        <p className="mt-2 text-sm text-earth">
+          Quotes from{" "}
           <a
-            href={`tel:${nap.phone}`}
-            className="block text-cabernet hover:underline font-medium"
+            href={zillowProfileUrl}
+            className="text-cabernet underline hover:no-underline"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {nap.phoneDisplay}
+            Zillow
           </a>
+          . Star counts are not marked up as schema.
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {agentStory.zillowQuotes.map((quote) => (
+            <blockquote
+              key={quote.text}
+              className="rounded-xl border border-rose bg-white p-5"
+            >
+              <p className="text-earth">“{quote.text}”</p>
+              <cite className="mt-3 block not-italic text-sm font-medium text-espresso">
+                — {quote.source}
+              </cite>
+            </blockquote>
+          ))}
         </div>
-        <div className="flex flex-wrap gap-4 mt-6">
-          <CalendlyLink className="inline-block bg-cabernet text-white px-5 py-2 rounded font-medium hover:bg-cabernet-dark">
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-espresso">What I do most</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {agentStory.specialties.map((item) => (
+            <div key={item.title} className="rounded-lg border border-rose p-5">
+              <h3 className="font-semibold text-espresso">{item.title}</h3>
+              <p className="mt-2 text-sm text-earth">{item.body}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 text-earth">{agentStory.alsoServing}</p>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-espresso">
+          The brokerage behind me
+        </h2>
+        <div className="mt-4 space-y-4 text-earth">
+          {agentStory.brokerage.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-12 rounded-lg border border-cabernet bg-pearl p-6">
+        <h2 className="text-2xl font-bold text-espresso">
+          One thing you should know before we tour
+        </h2>
+        {agentStory.buyerAgreement.map((paragraph) => (
+          <p key={paragraph} className="mt-3 text-earth">
+            {paragraph}
+          </p>
+        ))}
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-espresso">Contact Dr. Jan Duffy</h2>
+        <div className="mt-4 space-y-2 rounded-lg bg-pearl p-6 text-earth">
+          <p className="font-semibold text-espresso">{nap.name}</p>
+          <p>
+            License {agent.license} | {agent.brokerage}
+          </p>
+          <p>{nap.streetAddress}</p>
+          <p>{siteConfig.hoursDisplay}</p>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-4">
+          <CalendlyLink className="inline-block rounded bg-cabernet px-5 py-2 font-medium text-white hover:bg-cabernet-dark">
             Schedule a call
           </CalendlyLink>
           <Link
             href="/contact"
-            className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white"
+            className="inline-block rounded border border-cabernet px-5 py-2 font-medium text-espresso hover:bg-cabernet hover:text-white"
           >
             Contact
           </Link>
-          <a
-            href={siteConfig.realscoutUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block border border-cabernet text-espresso px-5 py-2 rounded font-medium hover:bg-cabernet hover:text-white"
+          <Link
+            href="/sellers"
+            className="inline-block rounded border border-cabernet px-5 py-2 font-medium text-espresso hover:bg-cabernet hover:text-white"
           >
-            Search homes for sale
-          </a>
+            Selling a home
+          </Link>
         </div>
       </section>
+
+      <FaqBlock faqs={aboutFaqs} />
     </div>
   );
 }

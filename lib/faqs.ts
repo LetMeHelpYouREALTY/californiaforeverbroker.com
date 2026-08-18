@@ -6,7 +6,7 @@ export type FaqItem = {
 export const homeFaqs: FaqItem[] = [
   {
     q: "What areas does California Forever Broker serve?",
-    a: "Dr. Jan Duffy represents buyers and sellers in Las Vegas, Henderson, Summerlin, Green Valley, and North Las Vegas. The Irvine office at 18600 MacArthur Blvd., Suite 150 is the California meeting point for relocators. License S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties.",
+    a: "Dr. Jan Duffy grew up in Las Vegas and has sold homes here since 1987. She represents buyers and sellers in Las Vegas, Henderson, Summerlin, Green Valley, and North Las Vegas. The Irvine office at 18600 MacArthur Blvd., Suite 150 is the California meeting point. License S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties.",
   },
   {
     q: "How long does buying a Las Vegas home usually take?",
@@ -22,7 +22,7 @@ export const homeFaqs: FaqItem[] = [
   },
   {
     q: "How are buyer-side fees handled?",
-    a: "Buyer representation is typically paid by the seller under the listing agreement. Dr. Duffy outlines every cost in writing at the first appointment so you see commission, title, and closing line items before you tour.",
+    a: "Buyer representation is typically paid by the seller under the listing agreement. Since August 2024 every buyer signs a representation agreement before touring. Dr. Duffy’s agreement states a specific amount, is fully negotiable, and is not set by law. You review it before you see a house.",
   },
   {
     q: "Can you help with new construction and investment properties?",

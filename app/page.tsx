@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FaqBlock } from "@/components/sections/FaqBlock";
 import { Button } from "@/components/ui/button";
+import { agentStory } from "@/lib/agent-story";
 import { homeFaqs } from "@/lib/faqs";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { faqPageNode, webPageNode } from "@/lib/schema";
@@ -24,16 +25,22 @@ const whyRelocate = [
 ];
 
 const whyChooseUs = [
-  { title: "Licensed since 2008", desc: "Nevada license S.0197614.LLC. Serving Las Vegas and Henderson buyers and sellers." },
-  { title: "Relocation process", desc: "One agent from first search through closing for California-to-Nevada moves." },
-  { title: "New-construction compare", desc: "Rate buydowns and closing credits compared across Summerlin, Henderson, and North Las Vegas." },
-  { title: "BHHS network", desc: "Berkshire Hathaway HomeServices Nevada Properties listing and referral support." },
-];
-
-const testimonials = [
-  { name: "Tom Sanders", location: "Las Vegas, NV", text: "Dr. Duffy made our relocation from California seamless. Her knowledge of the Las Vegas market is unmatched, and she guided us through every step with professionalism and care." },
-  { name: "Vitor Palmer", location: "Henderson, NV", text: "We couldn't be happier with our new home! The entire process was smooth, and Dr. Duffy's attention to detail and negotiation skills saved us thousands. Highly recommend!" },
-  { name: "Emily Rodriguez", location: "Summerlin, NV", text: "As first-time homebuyers moving from CA, we were nervous. Dr. Duffy patiently explained everything and helped us find the perfect home in our budget. Thank you!" },
+  {
+    title: "Selling since 1987",
+    desc: "Las Vegas native. Nevada license S.0197614.LLC. Same valley, same streets.",
+  },
+  {
+    title: "Your actual number",
+    desc: "Comps from your subdivision, including what did not sell and why.",
+  },
+  {
+    title: "Buyer at the builder’s table",
+    desc: "Century, KB, Lennar, Pulte, Toll. I represent you, not the builder.",
+  },
+  {
+    title: "California agent stays paid",
+    desc: "Your California agent keeps the relationship and earns a referral fee.",
+  },
 ];
 
 export default function Home() {
@@ -62,9 +69,9 @@ export default function Home() {
             Buy a Las Vegas or Henderson home after a California move
           </h1>
           <p id="aeo-answer" className="mt-5 max-w-2xl text-lg text-rose">
-            Dr. Jan Duffy, REALTOR®, license S.0197614.LLC, represents California
-            homebuyers in Las Vegas and Henderson. Search live listings, compare
-            10 neighborhoods, then book a 15-minute plan call at (949) 776-3527.
+            Las Vegas native. Selling homes here since 1987. Dr. Jan Duffy,
+            REALTOR®, license S.0197614.LLC, represents California buyers in
+            Las Vegas and Henderson. Call (949) 776-3527.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild variant="secondary">
@@ -88,6 +95,24 @@ export default function Home() {
             .
           </p>
         </div>
+      </section>
+
+      <section className="border-b border-rose bg-pearl px-4 py-10">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-4">
+          {agentStory.stats.map(({ label, value }) => (
+            <div key={label}>
+              <p className="text-2xl font-bold text-espresso">{value}</p>
+              <p className="mt-1 text-sm text-earth">{label}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mx-auto mt-4 max-w-6xl text-sm text-earth">
+          {agentStory.centuryAward}{" "}
+          <Link href="/about" className="text-cabernet underline hover:no-underline">
+            Read the full story
+          </Link>
+          .
+        </p>
       </section>
 
       <section className="border-b border-rose px-4 py-12">
@@ -137,7 +162,7 @@ export default function Home() {
       <section className="border-b border-rose px-4 py-12">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold tracking-tight text-espresso">
-            How Dr. Duffy works a relocation file
+            What you get from Dr. Duffy
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {whyChooseUs.map(({ title, desc }) => (
@@ -156,20 +181,27 @@ export default function Home() {
             Client notes
           </h2>
           <p className="mt-2 text-sm text-earth">
-            Quotes below are client comments, not a Google star rating in schema.
-            Read current reviews on Google.
+            Quotes from Zillow. Not a Google star rating in schema.{" "}
+            <Link
+              href={siteConfig.zillowProfileUrl}
+              className="text-cabernet underline hover:no-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read the Zillow profile
+            </Link>
+            .
           </p>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {testimonials.map(({ name, location, text }) => (
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {agentStory.zillowQuotes.map((quote) => (
               <blockquote
-                key={name}
+                key={quote.text}
                 className="rounded-xl border border-rose bg-white p-5"
               >
-                <p className="text-sm text-earth">{text}</p>
+                <p className="text-sm text-earth">“{quote.text}”</p>
                 <cite className="mt-3 block not-italic font-semibold text-espresso">
-                  {name}
+                  — {quote.source}
                 </cite>
-                <span className="text-sm text-earth">{location}</span>
               </blockquote>
             ))}
           </div>

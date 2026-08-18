@@ -47,6 +47,8 @@ export function siteEntityGraph() {
       "@id": schemaIds.person,
       name: agent.name,
       jobTitle: agent.jobTitle,
+      description:
+        "Las Vegas native selling homes since 1987. REALTOR®, license S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties.",
       email: agent.email,
       telephone: nap.phone,
       url: `${base}/about`,
@@ -57,6 +59,8 @@ export function siteEntityGraph() {
         "Henderson homes for sale",
         "California to Las Vegas relocation",
         "New-construction buyer representation",
+        "Summerlin luxury homes",
+        "55+ communities Las Vegas",
       ],
     },
     {

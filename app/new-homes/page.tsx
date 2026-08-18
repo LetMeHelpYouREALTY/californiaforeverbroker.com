@@ -78,10 +78,13 @@ export default function NewHomesPage() {
 
       <section className="prose prose-neutral max-w-none mb-10">
         <p className="text-lg text-earth">
-          California homebuyers relocating to Las Vegas have more choices than ever: new construction in Summerlin, Henderson, North Las Vegas, and Lake Las Vegas, with builder incentives like rate buydowns and closing cost credits. Working with a Realtor costs you nothing—builders typically pay your agent—and you get an advocate who knows the communities, the fine print on incentives, and how to align your purchase with your timeline and budget.
+          Century Communities named me Las Vegas’s best new-home REALTOR® in
+          2025. I also work KB, Lennar, Pulte, and Toll Brothers. I represent
+          you at the builder’s table, not the builder.
         </p>
         <p className="text-earth">
-          <strong>Dr. Jan Duffy</strong> helps buyers navigate new construction and resale across the Las Vegas valley. You get accountable, licensed representation and one point of contact; we keep our builder and community intel updated so your decision is based on current information. Schedule a call or appointment to discuss your move, current builder incentives, and the best neighborhoods for your lifestyle.
+          Rate buydowns and closing credits change by phase. I will tell you
+          which lot to fight for and which incentive actually closes.
         </p>
       </section>
 

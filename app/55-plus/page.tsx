@@ -5,9 +5,9 @@ import { pageSeo } from "@/lib/seo";
 import { CalendlyLink } from "@/components/CalendlyLink";
 
 export const metadata: Metadata = pageSeo("/55-plus", {
-  title: "55+ & Active Adult Communities | Las Vegas & Henderson",
+  title: "55+ Communities | Sun City Summerlin & Del Webb North Ranch",
   description:
-    "55+ and active adult communities in Las Vegas and Henderson. Amenities, lifestyle, and the right fit for your next chapter. Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
+    "Sun City Summerlin, Del Webb North Ranch, Heritage at Stonebridge. Compare HOA rules and lots with Dr. Jan Duffy. Call (949) 776-3527.",
 });
 
 const benefits = [
@@ -26,10 +26,13 @@ export default function FiftyFivePlusPage() {
 
       <section className="prose prose-neutral max-w-none mb-10">
         <p className="text-lg text-earth">
-          Las Vegas and Henderson are home to a growing number of 55+ and active adult communities—popular with California relocators who want low-maintenance living, clubs, pools, and a built-in social scene without the snow or state income tax.
+          Sun City Summerlin, Del Webb North Ranch, and Heritage at Stonebridge
+          are the 55+ communities I work most. California buyers often want
+          low-maintenance lots, clubs, and pools — without Nevada state income tax.
         </p>
         <p className="text-earth">
-          Whether you're looking for age-qualified (55+) or age-targeted lifestyle communities, we can help you compare locations, amenities, and HOA structures so you find the right fit for your next chapter.
+          Age-qualified (55+) and age-targeted communities differ on HOA rules and
+          resale. I will compare those line items before you tour.
         </p>
       </section>
 
