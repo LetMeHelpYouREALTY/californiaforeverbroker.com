@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "homes for sale Henderson",
     "buy a home Las Vegas",
     "California to Las Vegas real estate",
-    "first-time homebuyer Las Vegas",
+    "Las Vegas REALTOR since 1987",
     "relocation real estate Nevada",
   ],
   alternates: {

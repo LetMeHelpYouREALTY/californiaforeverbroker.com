@@ -26,8 +26,8 @@ export function LocalPresence({ showMap = true }: LocalPresenceProps) {
             Office, hours, and contact
           </h2>
           <p className="mt-2 text-earth">
-            {agent.name}, {agent.jobTitle}. License {agent.license}.{" "}
-            {agent.brokerage}.
+            {agent.name}, {agent.jobTitle}. Las Vegas native, selling homes here
+            since 1987. License {agent.license}. {agent.brokerage}.
           </p>
           <address className="mt-4 not-italic text-espresso">
             <p className="font-semibold">{nap.name}</p>

@@ -11,13 +11,16 @@ export const metadata: Metadata = pageSeo("/services", {
 });
 
 const services = [
-  { title: "Home Buying", href: "/", description: "First-time or repeat buyer—we guide you from search to closing with local market insight and negotiation." },
-  { title: "California Relocators", href: "/relocation", description: "Taxes, commute times, neighborhood fit, and a written checklist for a California-to-Las-Vegas move. Your California agent can earn a referral fee." },
-  { title: "Home Selling", href: "/sellers", description: "Selling in California before you move, or selling in Nevada. We help you price, stage, and market for the best outcome." },
-  { title: "Luxury Homes", href: "/luxury", description: "The Ridges, Southern Highlands, and other premium communities. Custom estates and high-end resale in Las Vegas and Henderson." },
-  { title: "55+ & Active Adult", href: "/55-plus", description: "Active adult and 55+ communities in the Las Vegas valley. Amenities, lifestyle, and the right fit for your next chapter." },
-  { title: "New Construction", href: "/new-homes", description: "New builds in Summerlin, Henderson, North Las Vegas, and more. Builder incentives, communities, and Realtor representation at no extra cost." },
-  { title: "Market Insights", href: "/market-report", description: "Current Las Vegas and Henderson market stats: median price, days on market, inventory. Updated for homebuyers and relocators." },
+  { title: "Home Buying", href: "/", description: "Street comps, not zip-code averages. If the payment will not feel good in year three, I will tell you." },
+  { title: "California Relocators", href: "/relocation", description: "Your California agent keeps the relationship and earns a referral fee. I hold the Nevada license." },
+  { title: "Home Selling", href: "/sellers", description: "Your actual number before you list. Three prices. Cancel anytime. No fee, no argument." },
+  { title: "Luxury Homes", href: "/luxury", description: "The Ridges, The Summit, Red Rock Country Club, and Stonebridge. Same read other agents call for." },
+  { title: "55+ & Active Adult", href: "/55-plus", description: "Sun City Summerlin, Del Webb North Ranch, Heritage at Stonebridge. Compare HOA rules and lots before you tour." },
+  { title: "New Construction", href: "/new-homes", description: "Century, KB, Lennar, Pulte, Toll. I represent you at the builder’s table, not the builder." },
+  { title: "Divorce and probate", href: "/sellers", description: "Handled quietly, handled fast. License S.0197614.LLC." },
+  { title: "Investors", href: "/contact", description: "Real cap-rate math on North Las Vegas and Henderson. Call (949) 776-3527." },
+  { title: "Veterans", href: "/contact", description: "VA loan certified. Same-day call, ten minutes, no pitch." },
+  { title: "Market Insights", href: "/market-report", description: "Median price, days on market, and inventory for Las Vegas and Henderson. Ask for street comps before you use a zip-code average." },
 ];
 
 export default function ServicesPage() {
@@ -28,7 +31,9 @@ export default function ServicesPage() {
       </h1>
 
       <p className="text-lg text-earth mb-10">
-        Whether you're buying, selling, or relocating from California to Las Vegas or Henderson, we offer full-service support backed by Berkshire Hathaway HomeServices Nevada Properties.
+        Las Vegas native. Selling homes here since 1987. Buying, selling, or
+        relocating from California — one license, S.0197614.LLC, Berkshire
+        Hathaway HomeServices Nevada Properties.
       </p>
 
       <section className="grid gap-6 mb-10">

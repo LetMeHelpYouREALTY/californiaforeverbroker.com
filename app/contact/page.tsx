@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CalendlyInline } from "@/components/CalendlyInline";
 import { JsonLd } from "@/components/JsonLd";
 import { GbpActions } from "@/components/sections/GbpActions";
+import { agentStory } from "@/lib/agent-story";
 import { webPageNode } from "@/lib/schema";
 import { pageSeo } from "@/lib/seo";
 import {
@@ -13,7 +14,7 @@ import {
 export const metadata: Metadata = pageSeo("/contact", {
   title: "Contact | Buy a Home in Las Vegas or Henderson",
   description:
-    "Contact Dr. Jan Duffy at 18600 MacArthur Blvd., Suite 150, Irvine, CA 92612. Call (949) 776-3527. Monday–Friday 8:30 a.m.–5:00 p.m. PT.",
+    "Contact Dr. Jan Duffy: same-day ten-minute call, no pitch. 18600 MacArthur Blvd., Suite 150, Irvine, CA 92612. Call (949) 776-3527.",
 });
 
 export default function ContactPage() {
@@ -35,9 +36,21 @@ export default function ContactPage() {
         Contact Dr. Jan Duffy
       </h1>
       <p id="aeo-answer" className="mt-4 max-w-3xl text-earth">
-        Call {nap.phoneDisplay} or book a 15-minute Calendly slot. The office is{" "}
-        {nap.streetAddress}. Hours: {hoursDisplay}.
+        Las Vegas native. Selling homes here since 1987. Same day we talk — ten
+        minutes, no pitch. Call {nap.phoneDisplay}. Office: {nap.streetAddress}.
+        Hours: {hoursDisplay}.
       </p>
+
+      <section className="mt-8 rounded-lg border border-rose bg-pearl p-6">
+        <h2 className="text-xl font-bold text-espresso">
+          {agentStory.process.title}
+        </h2>
+        <ol className="mt-4 list-decimal space-y-2 pl-5 text-earth">
+          {agentStory.process.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ol>
+      </section>
 
       <div className="mt-10 grid gap-10 md:grid-cols-2">
         <div>

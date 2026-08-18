@@ -115,6 +115,19 @@ export const agentStory = {
   ],
   alsoServing:
     "Also serving Henderson, North Las Vegas, Centennial Hills, Skye Canyon, Providence, Silverstone Ranch, Rhodes Ranch, Spanish Trail, Southern Highlands, The Lakes, and Boulder City.",
+  alsoServingPlaces: [
+    "Henderson",
+    "North Las Vegas",
+    "Centennial Hills",
+    "Skye Canyon",
+    "Providence",
+    "Silverstone Ranch",
+    "Rhodes Ranch",
+    "Spanish Trail",
+    "Southern Highlands",
+    "The Lakes",
+    "Boulder City",
+  ],
   brokerage: [
     "I’m with Berkshire Hathaway HomeServices Nevada Properties — and that matters more on your transaction than most agents let on.",
     "Our Arizona, California & Nevada group ranks #5 among Berkshire Hathaway HomeServices franchises worldwide (2026). In 2025 the group closed $4.7 billion across those three states.",

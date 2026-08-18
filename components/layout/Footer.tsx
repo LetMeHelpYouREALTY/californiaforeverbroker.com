@@ -32,6 +32,9 @@ export function Footer() {
           <div>
             <p className="font-semibold text-white">{agent.name}</p>
             <p className="mt-1 text-sm">
+              Las Vegas native. Selling homes here since 1987.
+            </p>
+            <p className="mt-1 text-sm">
               License {agent.license} | {agent.brokerage}
             </p>
             <CalendlyLink className="mt-3 inline-block text-sm font-medium text-blush hover:text-white">

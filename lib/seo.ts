@@ -7,11 +7,11 @@ const BASE = siteConfig.siteUrl.replace(/\/$/, "");
 export const homeShare = {
   title: "Las Vegas & Henderson Homes for Sale | California Forever Broker",
   description:
-    "Dr. Jan Duffy helps California buyers purchase homes in Las Vegas and Henderson. Search listings, compare neighborhoods, plan a move. (949) 776-3527.",
+    "Las Vegas native selling homes since 1987. Dr. Jan Duffy helps California buyers in Las Vegas and Henderson. Call (949) 776-3527.",
 } as const;
 
 export const ogImageAlt =
-  "California Forever Broker: Las Vegas and Henderson homes for sale with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties";
+  "Dr. Jan Duffy, Las Vegas native selling homes since 1987. California Forever Broker, Berkshire Hathaway HomeServices Nevada Properties";
 
 export const ogImageSize = { width: 1200, height: 630 } as const;
 

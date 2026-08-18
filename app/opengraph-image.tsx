@@ -64,7 +64,7 @@ export default function OpenGraphImage() {
               maxWidth: 980,
             }}
           >
-            California buyers relocating to Nevada
+            Las Vegas native. Selling homes here since 1987.
           </div>
         </div>
         <div

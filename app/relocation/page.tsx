@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = pageSeo("/relocation", {
   title: "California to Las Vegas Relocation Guide for Homebuyers",
   description:
-    "Planning to buy a home in Las Vegas? Taxes, cost of living, commute times, and a relocation checklist. Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
+    "Your California agent keeps the relationship and earns a referral fee. Dr. Jan Duffy has sold Las Vegas homes since 1987. Call (949) 776-3527.",
   robots: { index: true, follow: true },
 });
 
@@ -27,7 +27,7 @@ const checklist = [
 const relocationFaqs = [
   { q: "Why are so many Californians moving to Las Vegas?", a: "No state income tax, lower housing costs, strong job growth, and a lower cost of living make Nevada attractive. Many keep their California job and work remotely, or find new opportunities in Las Vegas's growing economy." },
   { q: "How do Nevada taxes compare to California?", a: "Nevada has no state income tax. California's top rate can exceed 13%. Property tax structures differ; we can walk you through how your total tax burden changes when you relocate." },
-  { q: "What about schools in Las Vegas and Henderson?", a: "Clark County School District serves the valley. Ask for school names and attendance boundaries for a specific address, plus commute time to the 215 Beltway." },
+  { q: "Can my California agent stay on the file?", a: "Yes. Your California agent keeps the relationship and earns a referral fee. Dr. Jan Duffy holds Nevada license S.0197614.LLC and handles the Las Vegas or Henderson purchase. Call (949) 776-3527." },
   { q: "How long does a typical relocation take?", a: "From first search to closing, plan for 2–4 months depending on whether you're selling in California first and how quickly you find the right home. We help coordinate both sides." },
 ];
 
@@ -52,10 +52,15 @@ export default function RelocationPage() {
 
       <section className="prose prose-neutral max-w-none mb-10">
         <p id="aeo-answer" className="text-lg text-earth">
-          More California homebuyers are choosing Las Vegas and Henderson for lower taxes, affordable housing, and a strong quality of life. Here's what you need to know and how to plan your move.
+          I grew up in Las Vegas. Started selling homes in 1987. Your California
+          agent keeps the relationship and earns a referral fee. I hold the
+          Nevada license and handle the purchase.
         </p>
         <p className="text-earth">
-          This guide is a durable resource—we keep our relocation content, neighborhood insights, and market data current so you get lasting value. You also get one accountable partner: a licensed real estate professional backed by Berkshire Hathaway HomeServices, so your relocation is handled with clarity and compliance from start to finish.
+          No state income tax. Lower typical purchase prices than most coastal
+          California markets. One accountable partner from first search through
+          keys — license S.0197614.LLC, Berkshire Hathaway HomeServices Nevada
+          Properties.
         </p>
       </section>
 
@@ -82,12 +87,11 @@ export default function RelocationPage() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-bold text-espresso mb-4">
-          Schools and commute
+          Commute times and attendance boundaries
         </h2>
         <p className="text-earth mb-4">
-          Clark County School District serves the Las Vegas valley. We share
-          school names and attendance boundaries for any address you short-list,
-          plus typical drive times to the 215, I-15, and McCarran/Harry Reid.
+          Ask for school names and attendance boundaries for a specific address,
+          plus typical drive times to the 215, I-15, and Harry Reid International.
         </p>
       </section>
 
@@ -129,7 +133,8 @@ export default function RelocationPage() {
           Ready to look at homes for sale?
         </h2>
         <p className="text-earth mb-4">
-          Dr. Jan Duffy specializes in helping California homebuyers relocate to Las Vegas and Henderson. Search current listings or get personalized guidance and local market insight.
+          Dr. Jan Duffy has sold Las Vegas homes since 1987. Search current
+          listings or get street comps — not a zip-code average.
         </p>
         <div className="flex flex-wrap gap-4">
           <a
