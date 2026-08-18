@@ -1,8 +1,5 @@
-import { Phone, MapPin, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GbpActions } from "@/components/sections/GbpActions";
 import {
-  callUrl,
-  directionsUrl,
   mapEmbedSrc,
   siteConfig,
 } from "@/lib/site-config";
@@ -12,7 +9,7 @@ type LocalPresenceProps = {
 };
 
 export function LocalPresence({ showMap = true }: LocalPresenceProps) {
-  const { nap, hoursDisplay, hoursNote, gbpReviewUrl, agent } = siteConfig;
+  const { nap, hoursDisplay, hoursNote, agent } = siteConfig;
 
   return (
     <section
@@ -44,26 +41,7 @@ export function LocalPresence({ showMap = true }: LocalPresenceProps) {
             {hoursDisplay}
           </p>
           <p className="text-sm text-earth">{hoursNote}</p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button asChild>
-              <a href={callUrl}>
-                <Phone className="h-4 w-4" aria-hidden />
-                Call {nap.phoneDisplay}
-              </a>
-            </Button>
-            <Button asChild variant="outline">
-              <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
-                <MapPin className="h-4 w-4" aria-hidden />
-                Directions
-              </a>
-            </Button>
-            <Button asChild variant="outline">
-              <a href={gbpReviewUrl} target="_blank" rel="noopener noreferrer">
-                <Star className="h-4 w-4" aria-hidden />
-                View Google Reviews
-              </a>
-            </Button>
-          </div>
+          <GbpActions />
         </div>
         {showMap ? (
           <div className="aspect-video overflow-hidden rounded-xl border border-rose bg-rose">

@@ -20,6 +20,7 @@ Canonical host: ${base}. Service area: Las Vegas, Henderson, Summerlin, Green Va
 - [Market report](${base}/market-report): Stats to verify before an offer
 - [About Dr. Jan Duffy](${base}/about): License, brokerage, and process
 - [Contact](${base}/contact): Call, directions, Calendly
+- [Irvine office](${base}/locations/irvine): Google Maps pin, hours, NAP
 - [Services](${base}/services): Buy, sell, luxury, 55+
 - [Sellers](${base}/sellers): California or Nevada sale
 - [Luxury homes](${base}/luxury): Higher-price Las Vegas inventory

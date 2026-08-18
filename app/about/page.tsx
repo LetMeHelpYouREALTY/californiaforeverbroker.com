@@ -4,16 +4,16 @@ import { siteConfig } from "@/lib/site-config";
 import { CalendlyLink } from "@/components/CalendlyLink";
 
 export const metadata: Metadata = {
-  title: "About Dr. Jan Duffy | California Forever Broker",
+  title: "About Dr. Jan Duffy",
   description:
     "Meet Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Serving Las Vegas and Henderson since 2008. License S.0197614.LLC. Your trusted partner for California-to-Las-Vegas relocation.",
   alternates: { canonical: "/about" },
 };
 
 const highlights = [
-  { label: "Properties sold", value: "500+" },
+  { label: "Nevada license", value: "S.0197614.LLC" },
   { label: "Serving Las Vegas", value: "Since 2008" },
-  { label: "Average rating", value: "4.9★" },
+  { label: "Brokerage", value: "BHHS NV" },
 ];
 
 export default function AboutPage() {

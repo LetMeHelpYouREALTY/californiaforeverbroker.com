@@ -74,6 +74,14 @@ export function siteEntityGraph() {
         latitude: geo.latitude,
         longitude: geo.longitude,
       },
+      hasMap: siteConfig.gbpMapsUrl,
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: nap.phone,
+        contactType: "customer service",
+        areaServed: ["US-CA", "US-NV"],
+        availableLanguage: ["English"],
+      },
       openingHoursSpecification: openingHoursSpecification(),
       areaServed: [
         ...areaServed.map((name) => ({ "@type": "City", name })),
@@ -91,7 +99,9 @@ export function siteEntityGraph() {
       employee: { "@id": schemaIds.person },
       sameAs: [
         siteConfig.bhhsProfileUrl,
-        siteConfig.gbpReviewUrl,
+        siteConfig.bhhsNvAgentUrl,
+        siteConfig.zillowProfileUrl,
+        siteConfig.gbpMapsUrl,
         siteConfig.calendlyUrl,
         siteConfig.realscoutUrl,
       ],

@@ -11,6 +11,7 @@ const nav = [
   { href: "/market-report", label: "Market Report" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
+  { href: "/locations/irvine", label: "Office" },
   { href: "/contact", label: "Contact" },
 ];
 

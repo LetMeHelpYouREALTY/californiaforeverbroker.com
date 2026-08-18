@@ -29,3 +29,18 @@ export const homeFaqs: FaqItem[] = [
     a: "Yes. She compares builder rate buydowns and closing credits in Summerlin, Henderson, North Las Vegas, and Lake Las Vegas, and she also represents investors buying single-family and small multi-unit properties in the Las Vegas valley.",
   },
 ];
+
+export const irvineOfficeFaqs: FaqItem[] = [
+  {
+    q: "Where is the California Forever Broker office?",
+    a: "18600 MacArthur Blvd., Suite 150, Irvine, CA 92612. That is the Google Maps pin. Call (949) 776-3527. Hours are Monday–Friday 8:30 a.m.–5:00 p.m. PT.",
+  },
+  {
+    q: "Why is the office in Irvine if you sell Las Vegas homes?",
+    a: "California relocators start in Orange County. Dr. Duffy’s Nevada license S.0197614.LLC covers Las Vegas and Henderson purchases. The Maps listing uses the Irvine suite you can visit; service work is the Las Vegas valley.",
+  },
+  {
+    q: "How do I get directions or leave a Google review?",
+    a: "Use View on Google Maps or View Google Reviews on this page. Search the exact suite so Google attaches the review to this location, not a different brand listing.",
+  },
+];

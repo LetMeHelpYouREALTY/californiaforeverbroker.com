@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendlyInline } from "@/components/CalendlyInline";
 import { JsonLd } from "@/components/JsonLd";
-import { Button } from "@/components/ui/button";
+import { GbpActions } from "@/components/sections/GbpActions";
 import { webPageNode } from "@/lib/schema";
 import {
-  callUrl,
-  directionsUrl,
   mapEmbedSrc,
   siteConfig,
 } from "@/lib/site-config";
@@ -57,25 +55,7 @@ export default function ContactPage() {
             </p>
             <p className="text-sm text-earth">{hoursNote}</p>
           </address>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button asChild>
-              <a href={callUrl}>Call {nap.phoneDisplay}</a>
-            </Button>
-            <Button asChild variant="outline">
-              <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
-                Directions
-              </a>
-            </Button>
-            <Button asChild variant="outline">
-              <a
-                href={siteConfig.gbpReviewUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Google Reviews
-              </a>
-            </Button>
-          </div>
+          <GbpActions />
           <p className="mt-6 text-sm text-earth">
             Search{" "}
             <a

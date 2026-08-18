@@ -13,6 +13,7 @@ const staticRoutes: {
   { path: "/new-homes", changeFrequency: "weekly", priority: 0.8 },
   { path: "/market-report", changeFrequency: "weekly", priority: 0.8 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/locations/irvine", changeFrequency: "monthly", priority: 0.85 },
   { path: "/about", changeFrequency: "monthly", priority: 0.7 },
   { path: "/services", changeFrequency: "monthly", priority: 0.7 },
   { path: "/sellers", changeFrequency: "monthly", priority: 0.7 },

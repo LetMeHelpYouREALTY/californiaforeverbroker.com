@@ -65,8 +65,10 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   other: {
-    "geo.region": "US-NV",
-    "geo.placename": "Las Vegas",
+    "geo.region": "US-CA",
+    "geo.placename": "Irvine",
+    "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
+    ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
   },
 };
 

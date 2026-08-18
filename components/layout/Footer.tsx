@@ -12,6 +12,7 @@ const footerNav = [
   { href: "/luxury", label: "Luxury Homes" },
   { href: "/55-plus", label: "55+ Communities" },
   { href: "/relocation", label: "Relocation Guide" },
+  { href: "/locations/irvine", label: "Irvine office" },
   { href: "/market-report", label: "Market Report" },
   { href: "/contact", label: "Contact" },
 ];

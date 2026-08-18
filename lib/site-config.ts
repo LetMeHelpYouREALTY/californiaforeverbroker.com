@@ -55,11 +55,20 @@ export const siteConfig = {
    * verify as a URL-prefix property without a new DNS row.
    */
   googleSiteVerification: "KVbX629PHY0wc9UPDUMpX4c_eiJL2HcMhclQmeQ-KRs",
-  gbpReviewUrl: "https://g.page/r/heyberkshire/review",
-  realscoutUrl: "http://drjanduffy.realscout.com/",
+  /**
+   * Maps/review links use the NAP query until a Place ID/CID is verified.
+   * Do not reuse another brand’s g.page slug (e.g. heyberkshire).
+   */
+  gbpMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=18600%20MacArthur%20Blvd.%2C%20Suite%20150%2C%20Irvine%2C%20CA%2092612",
+  gbpReviewUrl:
+    "https://www.google.com/maps/search/?api=1&query=Dr%20Jan%20Duffy%2018600%20MacArthur%20Blvd%20Irvine",
+  realscoutUrl: "https://drjanduffy.realscout.com/",
   calendlyUrl: "https://calendly.com/drjanduffy/dr-duffy-private-15-min-conversation",
   bhhsProfileUrl:
     "https://www.bhhs.com/arizona-properties-california-properties-and-nevada-properties-nv301/las-vegas/dr-jan-duffy/cid-3042332",
+  bhhsNvAgentUrl: "https://www.bhhsnv.com/real-estate-agent/4986/dr-jan-duffy",
+  zillowProfileUrl: "https://www.zillow.com/profile/DrJanDuffy",
   mapQuery: "18600 MacArthur Blvd, Suite 150, Irvine, CA 92612",
   areaServed: [
     "Las Vegas",
