@@ -11,7 +11,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { siteEntityGraph } from "@/lib/schema";
 import { canonicalUrl, homeShare } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
-import WidgetTracker from './widget-tracker'
 
 const googleVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
@@ -99,7 +98,6 @@ export default function RootLayout({
         <Footer />
         <CalendlyBadge />
         <Analytics />
-        <WidgetTracker />
       </body>
     </html>
   );
