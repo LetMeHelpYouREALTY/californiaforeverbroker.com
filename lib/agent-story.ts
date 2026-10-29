@@ -65,7 +65,7 @@ export const agentStory = {
     { label: "Las Vegas native", value: "Since 1987" },
     { label: "Closed volume", value: "$127 million" },
     { label: "Households helped", value: "500+" },
-    { label: "realtor.com reviews", value: "4.9★ · 51" },
+    { label: "realtor.com reviews", value: "5.0★ · 51" },
   ],
   centuryAward:
     "Named Best New Home REALTOR® in Las Vegas by Century Communities, 2025.",
