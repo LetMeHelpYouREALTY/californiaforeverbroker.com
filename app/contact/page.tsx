@@ -36,7 +36,7 @@ export default function ContactPage() {
         Contact Dr. Jan Duffy
       </h1>
       <p id="aeo-answer" className="mt-4 max-w-3xl text-earth">
-        Las Vegas native. Selling homes here since 1987. Same day we talk — ten
+        Licensed since 2008 · 35 years in Las Vegas. Same day we talk — ten
         minutes, no pitch. Call {nap.phoneDisplay}. Office: {nap.streetAddress}.
         Hours: {hoursDisplay}.
       </p>
@@ -56,8 +56,6 @@ export default function ContactPage() {
         <div>
           <address className="not-italic text-earth">
             <p className="font-semibold text-espresso">{nap.name}</p>
-            <p>{agent.brokerage}</p>
-            <p>License {agent.license}</p>
             <p>{nap.street}</p>
             <p>
               {nap.addressLocality}, {nap.addressRegion} {nap.postalCode}

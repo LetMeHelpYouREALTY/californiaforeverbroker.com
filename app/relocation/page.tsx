@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = pageSeo("/relocation", {
   title: "California to Las Vegas Relocation Guide for Homebuyers",
   description:
-    "Your California agent keeps the relationship and earns a referral fee. Dr. Jan Duffy has sold Las Vegas homes since 1987. Call (949) 776-3527.",
+    "Your California agent keeps the relationship and earns a referral fee. Dr. Jan Duffy is a REALTOR® licensed since 2008 · 35 years in Las Vegas. Call (949) 776-3527.",
   robots: { index: true, follow: true },
 });
 
@@ -27,7 +27,7 @@ const checklist = [
 const relocationFaqs = [
   { q: "Why are so many Californians moving to Las Vegas?", a: "No state income tax, lower housing costs, strong job growth, and a lower cost of living make Nevada attractive. Many keep their California job and work remotely, or find new opportunities in Las Vegas's growing economy." },
   { q: "How do Nevada taxes compare to California?", a: "Nevada has no state income tax. California's top rate can exceed 13%. Property tax structures differ; we can walk you through how your total tax burden changes when you relocate." },
-  { q: "Can my California agent stay on the file?", a: "Yes. Your California agent keeps the relationship and earns a referral fee. Dr. Jan Duffy holds Nevada license S.0197614.LLC and handles the Las Vegas or Henderson purchase. Call (949) 776-3527." },
+  { q: "Can my California agent stay on the file?", a: "Yes. Your California agent keeps the relationship and earns a referral fee. Dr. Jan Duffy holds the Nevada license and handles the Las Vegas or Henderson purchase. Call (949) 776-3527." },
   { q: "How long does a typical relocation take?", a: "From first search to closing, plan for 2–4 months depending on whether you're selling in California first and how quickly you find the right home. We help coordinate both sides." },
 ];
 
@@ -59,8 +59,7 @@ export default function RelocationPage() {
         <p className="text-earth">
           No state income tax. Lower typical purchase prices than most coastal
           California markets. One accountable partner from first search through
-          keys — license S.0197614.LLC, Berkshire Hathaway HomeServices Nevada
-          Properties.
+          keys — Dr. Jan Duffy, REALTOR® licensed since 2008.
         </p>
       </section>
 
@@ -133,7 +132,7 @@ export default function RelocationPage() {
           Ready to look at homes for sale?
         </h2>
         <p className="text-earth mb-4">
-          Dr. Jan Duffy has sold Las Vegas homes since 1987. Search current
+          Dr. Jan Duffy is a REALTOR® licensed since 2008 · 35 years in Las Vegas. Search current
           listings or get street comps — not a zip-code average.
         </p>
         <div className="flex flex-wrap gap-4">

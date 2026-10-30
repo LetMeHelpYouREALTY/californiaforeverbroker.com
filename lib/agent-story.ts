@@ -10,11 +10,10 @@ import type { FaqItem } from "@/lib/faqs";
  */
 export const agentStory = {
   headline: "Dr. Jan Duffy, REALTOR®",
-  kicker: "Las Vegas native. Selling homes here since 1987.",
+  kicker: "Licensed since 2008 · 35 years in Las Vegas.",
   origin: [
-    "I grew up here. Started selling homes in 1987.",
-    "Which means I was already working this valley when they announced Summerlin. Watched them build Summerlin Parkway — locals called it “the road to nowhere.” Four miles of brand-new asphalt running straight out into empty desert. Everybody laughed. That desert holds 127,000 people now.",
-    "Same valley, same streets, 500+ families moved. Nevada license S.0197614.LLC.",
+    "I watched them build Summerlin Parkway — locals called it “the road to nowhere.” Four miles of brand-new asphalt running straight out into empty desert. Everybody laughed. That desert holds 127,000 people now.",
+    "Same valley, same streets, 500+ families moved.",
     "I know what your house is worth. Not a guess. Not an algorithm’s opinion. The real number.",
   ],
   selling: {
@@ -62,10 +61,10 @@ export const agentStory = {
     ],
   },
   stats: [
-    { label: "Las Vegas native", value: "Since 1987" },
-    { label: "Closed volume", value: "$127 million" },
+    { label: "Licensed", value: "Since 2008" },
+    { label: "Closed volume", value: "$127M+" },
     { label: "Households helped", value: "500+" },
-    { label: "realtor.com reviews", value: "5.0★ · 51" },
+    { label: "Realtor.com · 50 reviews", value: "5.0★" },
   ],
   centuryAward:
     "Named Best New Home REALTOR® in Las Vegas by Century Communities, 2025.",
@@ -128,12 +127,6 @@ export const agentStory = {
     "The Lakes",
     "Boulder City",
   ],
-  brokerage: [
-    "I’m with Berkshire Hathaway HomeServices Nevada Properties — and that matters more on your transaction than most agents let on.",
-    "Our Arizona, California & Nevada group ranks #5 among Berkshire Hathaway HomeServices franchises worldwide (2026). In 2025 the group closed $4.7 billion across those three states.",
-    "What you get from that: relocation infrastructure that moves clients between states without a handoff, a luxury marketing platform with global listing distribution, and a brand Harris Poll EquiTrend named Real Estate Agency Brand of the Year in 2014, 2018, and 2020.",
-    "The brand gets your listing seen. I’m the one who gets it sold.",
-  ],
   buyerAgreement: [
     "Since August 2024, every buyer signs a representation agreement before seeing a home. Mine states a specific amount, it’s fully negotiable, and it isn’t set by law.",
     "We’ll go through it together before we see a single house. Nothing at closing will surprise you.",
@@ -143,7 +136,7 @@ export const agentStory = {
 export const aboutFaqs: FaqItem[] = [
   {
     q: "How long has Dr. Jan Duffy sold homes in Las Vegas?",
-    a: "She grew up in Las Vegas and has sold homes here since 1987. Current Nevada license is S.0197614.LLC with Berkshire Hathaway HomeServices Nevada Properties.",
+    a: "Dr. Jan Duffy is a REALTOR® licensed since 2008 · 35 years in Las Vegas.",
   },
   {
     q: "Do buyers have to sign an agreement before touring?",

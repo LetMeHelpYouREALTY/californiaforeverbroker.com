@@ -48,7 +48,7 @@ export function siteEntityGraph() {
       name: agent.name,
       jobTitle: agent.jobTitle,
       description:
-        "Las Vegas native selling homes since 1987. REALTOR®, license S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties.",
+        "REALTOR® licensed since 2008 · 35 years in Las Vegas.",
       email: agent.email,
       telephone: nap.phone,
       url: `${base}/about`,

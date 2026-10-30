@@ -26,8 +26,8 @@ const whyRelocate = [
 
 const whyChooseUs = [
   {
-    title: "Selling since 1987",
-    desc: "Las Vegas native. Nevada license S.0197614.LLC. Same valley, same streets.",
+    title: "Licensed since 2008",
+    desc: "35 years in Las Vegas. Same valley, same streets.",
   },
   {
     title: "Your actual number",
@@ -69,8 +69,8 @@ export default function Home() {
             Buy a Las Vegas or Henderson home after a California move
           </h1>
           <p id="aeo-answer" className="mt-5 max-w-2xl text-lg text-rose">
-            Las Vegas native. Selling homes here since 1987. Dr. Jan Duffy,
-            REALTOR®, license S.0197614.LLC, represents California buyers in
+            Licensed since 2008 · 35 years in Las Vegas. Dr. Jan Duffy,
+            REALTOR®, represents California buyers in
             Las Vegas and Henderson. Call (949) 776-3527.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">

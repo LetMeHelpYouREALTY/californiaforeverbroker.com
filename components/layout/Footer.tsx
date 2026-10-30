@@ -32,10 +32,10 @@ export function Footer() {
           <div>
             <p className="font-semibold text-white">{agent.name}</p>
             <p className="mt-1 text-sm">
-              Las Vegas native. Selling homes here since 1987.
+              Licensed since 2008 · 35 years in Las Vegas.
             </p>
             <p className="mt-1 text-sm">
-              License {agent.license} | {agent.brokerage}
+              Berkshire Hathaway HomeServices Nevada Properties since September 2008 · License S.0197614.LLC
             </p>
             <CalendlyLink className="mt-3 inline-block text-sm font-medium text-blush hover:text-white">
               Book a 15-minute call
@@ -60,7 +60,7 @@ export function Footer() {
         <p className="mx-auto mt-8 max-w-6xl text-xs text-dove">
           Neighborhood guides, relocation notes, and market pages are reviewed for
           California-to-Las-Vegas buyers. Last updated: {monthYear} |{" "}
-          {siteUrl.replace("https://", "")} – {agent.brokerage}. Equal Housing
+          {siteUrl.replace("https://", "")}. Equal Housing
           Opportunity.
         </p>
       </div>

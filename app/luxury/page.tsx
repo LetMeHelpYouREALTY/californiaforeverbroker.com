@@ -8,7 +8,7 @@ import { neighborhoods } from "@/lib/neighborhoods";
 export const metadata: Metadata = pageSeo("/luxury", {
   title: "Luxury Homes | The Ridges, The Summit, Red Rock Country Club",
   description:
-    "Summerlin West luxury: The Ridges, The Summit, Red Rock Country Club, Stonebridge. Dr. Jan Duffy has sold Las Vegas homes since 1987. Call (949) 776-3527.",
+    "Summerlin West luxury: The Ridges, The Summit, Red Rock Country Club, Stonebridge. Dr. Jan Duffy is a REALTOR® licensed since 2008 · 35 years in Las Vegas. Call (949) 776-3527.",
 });
 
 const luxurySlugs = ["the-ridges", "southern-highlands", "summerlin", "henderson"];

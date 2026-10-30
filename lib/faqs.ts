@@ -6,7 +6,7 @@ export type FaqItem = {
 export const homeFaqs: FaqItem[] = [
   {
     q: "What areas does California Forever Broker serve?",
-    a: "Dr. Jan Duffy grew up in Las Vegas and has sold homes here since 1987. She represents buyers and sellers in Las Vegas, Henderson, Summerlin, Green Valley, and North Las Vegas. The Irvine office at 18600 MacArthur Blvd., Suite 150 is the California meeting point. License S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties.",
+    a: "Dr. Jan Duffy is a REALTOR® licensed since 2008 · 35 years in Las Vegas. She represents buyers and sellers in Las Vegas, Henderson, Summerlin, Green Valley, and North Las Vegas. The Irvine office at 18600 MacArthur Blvd., Suite 150 is the California meeting point.",
   },
   {
     q: "How long does buying a Las Vegas home usually take?",
@@ -37,7 +37,7 @@ export const irvineOfficeFaqs: FaqItem[] = [
   },
   {
     q: "Why is the office in Irvine if you sell Las Vegas homes?",
-    a: "California relocators start in Orange County. Dr. Duffy’s Nevada license S.0197614.LLC covers Las Vegas and Henderson purchases. The Maps listing uses the Irvine suite you can visit; service work is the Las Vegas valley.",
+    a: "California relocators start in Orange County. Dr. Duffy’s Nevada license covers Las Vegas and Henderson purchases. The Maps listing uses the Irvine suite you can visit; service work is the Las Vegas valley.",
   },
   {
     q: "How do I get directions or leave a Google review?",

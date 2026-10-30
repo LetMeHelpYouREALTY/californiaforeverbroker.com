@@ -8,7 +8,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata: Metadata = pageSeo("/neighborhoods", {
   title: "Homes for Sale by Neighborhood | Las Vegas & Henderson",
   description:
-    "Find homes for sale in Summerlin, Henderson, Green Valley, Southern Highlands, and more. Dr. Jan Duffy has sold Las Vegas homes since 1987. Call (949) 776-3527.",
+    "Find homes for sale in Summerlin, Henderson, Green Valley, Southern Highlands, and more. Dr. Jan Duffy is a REALTOR® licensed since 2008 · 35 years in Las Vegas. Call (949) 776-3527.",
 });
 
 export default function NeighborhoodsIndexPage() {

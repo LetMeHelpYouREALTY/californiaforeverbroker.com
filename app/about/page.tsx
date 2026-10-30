@@ -10,10 +10,10 @@ import { pageSeo } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 const aboutDescription =
-  "Las Vegas native selling homes since 1987. $127 million closed, 500+ households. Dr. Jan Duffy, license S.0197614.LLC, Berkshire Hathaway HomeServices. Call (949) 776-3527.";
+  "Licensed since 2008 · 35 years in Las Vegas. $127M+ closed, 500+ households. Dr. Jan Duffy, REALTOR®. Call (949) 776-3527.";
 
 export const metadata: Metadata = pageSeo("/about", {
-  title: "About Dr. Jan Duffy, Las Vegas REALTOR® Since 1987",
+  title: "About Dr. Jan Duffy, Las Vegas REALTOR® Licensed Since 2008",
   description: aboutDescription,
 });
 
@@ -33,9 +33,6 @@ export default function AboutPage() {
         ]}
       />
 
-      <p className="text-sm font-medium uppercase tracking-wide text-cabernet">
-        {agent.brokerage}
-      </p>
       <h1 className="mt-2 text-3xl font-bold text-espresso md:text-4xl">
         {agentStory.headline}
       </h1>
@@ -151,17 +148,6 @@ export default function AboutPage() {
         <p className="mt-6 text-earth">{agentStory.alsoServing}</p>
       </section>
 
-      <section className="mt-12">
-        <h2 className="text-2xl font-bold text-espresso">
-          The brokerage behind me
-        </h2>
-        <div className="mt-4 space-y-4 text-earth">
-          {agentStory.brokerage.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-      </section>
-
       <section className="mt-12 rounded-lg border border-cabernet bg-pearl p-6">
         <h2 className="text-2xl font-bold text-espresso">
           One thing you should know before we tour
@@ -177,9 +163,6 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold text-espresso">Contact Dr. Jan Duffy</h2>
         <div className="mt-4 space-y-2 rounded-lg bg-pearl p-6 text-earth">
           <p className="font-semibold text-espresso">{nap.name}</p>
-          <p>
-            License {agent.license} | {agent.brokerage}
-          </p>
           <p>{nap.streetAddress}</p>
           <p>{siteConfig.hoursDisplay}</p>
         </div>
