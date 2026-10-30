@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = pageSeo("/sellers", {
   title: "Sell Your Home | Three Prices, Cancel Anytime | Dr. Jan Duffy",
   description:
-    "Get your actual number before you list. Three prices, cancel anytime, no fee. Dr. Jan Duffy has sold Las Vegas homes since 1987. Call (949) 776-3527.",
+    "Get your actual number before you list. Three prices, cancel anytime, no fee. Dr. Jan Duffy is a REALTOR® licensed since 2008 · 35 years in Las Vegas. Call (949) 776-3527.",
 });
 
 export default function SellersPage() {
@@ -22,8 +22,8 @@ export default function SellersPage() {
           sold in your subdivision — and what did not sell, and why.
         </p>
         <p className="text-earth">
-          The failures matter most. That is where sellers lose money. Las Vegas
-          native, selling homes here since 1987.
+          The failures matter most. That is where sellers lose money. Licensed since
+          2008 · 35 years in Las Vegas.
         </p>
       </section>
 
@@ -47,8 +47,8 @@ export default function SellersPage() {
         </h2>
         <p className="mb-4 text-earth">
           Your California agent keeps the relationship and earns a referral fee.
-          I handle the Nevada sale or the Las Vegas purchase on license
-          S.0197614.LLC. Read the{" "}
+          I handle the Nevada sale or the Las Vegas purchase on my Nevada
+          license. Read the{" "}
           <Link href="/relocation" className="text-cabernet hover:underline">
             relocation guide
           </Link>{" "}

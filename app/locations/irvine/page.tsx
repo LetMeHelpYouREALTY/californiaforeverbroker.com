@@ -55,8 +55,6 @@ export default function IrvineOfficePage() {
         <address className="not-italic text-earth">
           <h2 className="text-xl font-bold text-espresso">NAP (matches Google)</h2>
           <p className="mt-3 font-semibold text-espresso">{nap.name}</p>
-          <p>{agent.brokerage}</p>
-          <p>License {agent.license}</p>
           <p>{nap.street}</p>
           <p>
             {nap.addressLocality}, {nap.addressRegion} {nap.postalCode}

@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!neighborhood) return { title: "Neighborhood" };
   return pageSeo(`/neighborhoods/${slug}`, {
     title: `Homes for Sale in ${neighborhood.name} | Las Vegas Real Estate`,
-    description: `Find homes in ${neighborhood.name}. ${neighborhood.priceFrom} and up. Expert help for California homebuyers relocating to Las Vegas. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.`,
+    description: `Find homes in ${neighborhood.name}. ${neighborhood.priceFrom} and up. Expert help for California homebuyers relocating to Las Vegas. Dr. Jan Duffy, REALTOR®.`,
   });
 }
 
@@ -40,7 +40,7 @@ function neighborhoodFaqs(
     },
     {
       q: `Who helps California buyers looking in ${name}?`,
-      a: `Dr. Jan Duffy, license S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties. Call (949) 776-3527 or book a 15-minute call. The Irvine office is 18600 MacArthur Blvd., Suite 150.`,
+      a: `Dr. Jan Duffy, REALTOR® licensed since 2008 · 35 years in Las Vegas. Call (949) 776-3527 or book a 15-minute call. The Irvine office is 18600 MacArthur Blvd., Suite 150.`,
     },
   ];
 }

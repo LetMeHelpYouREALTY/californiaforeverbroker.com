@@ -7,7 +7,7 @@ import { CalendlyLink } from "@/components/CalendlyLink";
 export const metadata: Metadata = pageSeo("/services", {
   title: "Real Estate Services | Buy, Sell & Relocate to Las Vegas",
   description:
-    "Buy, sell, relocate, new construction, 55+, VA, and probate. Las Vegas native selling since 1987. Dr. Jan Duffy, license S.0197614.LLC. Call (949) 776-3527.",
+    "Buy, sell, relocate, new construction, 55+, VA, and probate. Dr. Jan Duffy, licensed since 2008 · 35 years in Las Vegas. Call (949) 776-3527.",
 });
 
 const services = [
@@ -17,7 +17,7 @@ const services = [
   { title: "Luxury Homes", href: "/luxury", description: "The Ridges, The Summit, Red Rock Country Club, and Stonebridge. Same read other agents call for." },
   { title: "55+ & Active Adult", href: "/55-plus", description: "Sun City Summerlin, Del Webb North Ranch, Heritage at Stonebridge. Compare HOA rules and lots before you tour." },
   { title: "New Construction", href: "/new-homes", description: "Century, KB, Lennar, Pulte, Toll. I represent you at the builder’s table, not the builder." },
-  { title: "Divorce and probate", href: "/sellers", description: "Handled quietly, handled fast. License S.0197614.LLC." },
+  { title: "Divorce and probate", href: "/sellers", description: "Handled quietly, handled fast." },
   { title: "Investors", href: "/contact", description: "Real cap-rate math on North Las Vegas and Henderson. Call (949) 776-3527." },
   { title: "Veterans", href: "/contact", description: "VA loan certified. Same-day call, ten minutes, no pitch." },
   { title: "Market Insights", href: "/market-report", description: "Median price, days on market, and inventory for Las Vegas and Henderson. Ask for street comps before you use a zip-code average." },
@@ -31,9 +31,8 @@ export default function ServicesPage() {
       </h1>
 
       <p className="text-lg text-earth mb-10">
-        Las Vegas native. Selling homes here since 1987. Buying, selling, or
-        relocating from California — one license, S.0197614.LLC, Berkshire
-        Hathaway HomeServices Nevada Properties.
+        Licensed since 2008 · 35 years in Las Vegas. Buying, selling, or
+        relocating from California — one Nevada license covers it.
       </p>
 
       <section className="grid gap-6 mb-10">

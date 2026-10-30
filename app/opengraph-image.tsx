@@ -64,7 +64,7 @@ export default function OpenGraphImage() {
               maxWidth: 980,
             }}
           >
-            Las Vegas native. Selling homes here since 1987.
+            Licensed since 2008 · 35 years in Las Vegas.
           </div>
         </div>
         <div
@@ -76,7 +76,7 @@ export default function OpenGraphImage() {
           }}
         >
           <div style={{ display: "flex" }}>
-            {agent.name} · {agent.brokerage}
+            {agent.name} · {agent.jobTitle}
           </div>
           <div style={{ display: "flex", marginTop: 8 }}>
             {nap.phoneDisplay} · {nap.streetAddress}
