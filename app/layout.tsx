@@ -11,6 +11,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { siteEntityGraph } from "@/lib/schema";
 import { canonicalUrl, homeShare } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
+import RealtorAnalytics from "../components/analytics/RealtorAnalytics";
 
 const googleVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
@@ -98,6 +99,7 @@ export default function RootLayout({
         <Footer />
         <CalendlyBadge />
         <Analytics />
+        <RealtorAnalytics siteName="californiaforeverbroker.com" />
       </body>
     </html>
   );
